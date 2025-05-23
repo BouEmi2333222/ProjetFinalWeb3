@@ -6,6 +6,7 @@ export default function Card(carte) {
                 <div className="card-body col">
                     <h5 className="card-title">{carte.carte.name}</h5>
                     <p className="card-text">{carte.carte.description}</p>
+                    <p className="card-text">Prix : {carte.carte.price}$</p>
                 </div>
             </div>
         </a>
