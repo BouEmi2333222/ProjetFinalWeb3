@@ -1,9 +1,12 @@
-import { panierStorage } from "../lib/panierStorage";
+import { panierStorage } from "../lib/panierStorage"
 
-async function addPanier() {
-    
-}
+
+
 export default function CarteProduit(produit) {
+    async function handleSubmit() {
+        console.log(produit)
+        panierStorage.addProduit(produit.produit)
+    }
     return (
         <a href="#" className="text-decoration-none d-flex justify-content-center">
             <div className="card flex flex-row" style={{ width: "20rem" }}>
@@ -12,7 +15,7 @@ export default function CarteProduit(produit) {
                     <h5 className="card-title">{produit.produit.name}</h5>
                     <p className="card-text">{produit.produit.description}</p>
                     <p className="card-text">Prix : {produit.produit.price}$</p>
-                    <button onSubmit={addPanier} className="btn btn-primary">Ajouter au panier</button>
+                    <button onClick={handleSubmit} className="btn btn-primary">Ajouter au panier</button>
                 </div>
             </div>
         </a>
