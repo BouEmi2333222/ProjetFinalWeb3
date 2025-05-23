@@ -1,14 +1,31 @@
 import { sessionStorage } from "../lib/sessionStorage"
 import React from "react"
 
-async function loadUrlProfil(){
-    const session = await sessionStorage.get()
-    console.log(session)
-    if (session === null) return "../connexion"
-    else return `../profil/${session.username}`
-}
+
 
 export default function Header() {
+    const [information, setInformation] = React.useState([])
+    React.useEffect(() => {
+        async function fetchPosts() { 
+            const session = await sessionStorage.get()
+            setInformation(session)
+        }
+        fetchPosts()
+    }, [])
+    console.log(information.result)
+    function loadUrlProfil(){
+        if (!information.result || !information.result.id){
+            return "../connexion"
+        } 
+        else {
+            return "../profil/1"
+        }
+    }
+    
+    function loadUrlPanier(){
+        if (!information.result || !information.result.id) return "../connexion"
+        else return "../panier"
+    }
     return (
         <header data-bs-theme="light">
             <nav className="bg-light">
@@ -18,9 +35,11 @@ export default function Header() {
                         <form className="col flex mx-5" role="search">
                             <input className="form-control" type="search" placeholder="Rechercher" aria-label="Rechercher"></input>
                         </form>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-cart mx-2" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-                        </svg>
+                        <a href={loadUrlPanier()}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-cart mx-2" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>
+                        </a>
                         <a href={loadUrlProfil()}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-person-circle mx-5" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>

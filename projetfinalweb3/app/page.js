@@ -14,9 +14,9 @@ export default function Home() {
   const [cartes, setCartes] = React.useState([])
     React.useEffect(() => {
         async function fetchPosts() { 
-            const response = await fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Carte`)
-            var json = await response.json()
-            setCartes(json)
+          const response = await fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Carte`)
+          var json = await response.json()
+          setCartes(json)
         }
         fetchPosts()
     }, [])

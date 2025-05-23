@@ -4,7 +4,7 @@ import Header from "../../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "../../reactComponents/Footer";
 import { sessionStorage } from "../../lib/sessionStorage"
-import LoadPage from "./loadPage.js";
+import LoadPage from "./LoadPage.js";
 import React from "react"
 
 export default function Profil(){
@@ -16,13 +16,12 @@ export default function Profil(){
         }
         fetchPosts()
     }, [])
-    console.log(information.result)
     return(<><Header/>
     <h1 className="text-center">Profil</h1>
     <div className="container">
         <div className="row justify-content-center">
             <ul>
-                <li>Username : {information.result.username} </li>
+                <li>Username : {information.result} </li>
             </ul>
         </div>
     </div>

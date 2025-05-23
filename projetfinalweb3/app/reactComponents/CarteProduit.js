@@ -1,6 +1,11 @@
 import { panierStorage } from "../lib/panierStorage"
+import { sessionStorage } from "../lib/sessionStorage"
 
-
+const isLoggedIn = async () => {
+    const session = await sessionStorage.get()
+    if (session === null) return false
+    else return true
+}
 
 export default function CarteProduit(produit) {
     async function handleSubmit() {
@@ -15,7 +20,8 @@ export default function CarteProduit(produit) {
                     <h5 className="card-title">{produit.produit.name}</h5>
                     <p className="card-text">{produit.produit.description}</p>
                     <p className="card-text">Prix : {produit.produit.price}$</p>
-                    <button onClick={handleSubmit} className="btn btn-primary">Ajouter au panier</button>
+                    {isLoggedIn() && (<button onClick={handleSubmit} className="btn btn-primary">Ajouter au panier</button>)}
+                    
                 </div>
             </div>
         </a>
