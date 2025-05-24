@@ -1,7 +1,7 @@
 import Header from "../../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "../../reactComponents/Footer.js";
-import { sessionStorage } from "../../lib/sessionStorage.js"
+import { sessionStorage } from "../../dbacces/sessionStorage.js"
 import React from "react"
 
 export default function LoadPage(information){

@@ -1,5 +1,5 @@
-import { panierStorage } from "../lib/panierStorage"
-import { sessionStorage } from "../lib/sessionStorage"
+import { panierStorage } from "../dbacces/panierStorage"
+import { sessionStorage } from "../dbacces/sessionStorage"
 
 const isLoggedIn = async () => {
     const session = await sessionStorage.get()
