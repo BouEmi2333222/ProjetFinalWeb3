@@ -3,7 +3,7 @@
 import Header from "../../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "../../reactComponents/Footer";
-import { sessionStorage } from "../../lib/sessionStorage"
+import { sessionStorage } from "../../dbacces/sessionStorage.js"
 import LoadPage from "./LoadPage.js";
 import React from "react"
 

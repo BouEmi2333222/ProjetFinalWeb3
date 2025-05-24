@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "../reactComponents/Footer";
 import FormEvent  from "react"
 import { useRouter } from "next/navigation"
-import { sessionStorage } from "../lib/sessionStorage"
+import { sessionStorage } from "../dbacces/sessionStorage.js"
 import React from "react"
 
 export default function Connexion() {
