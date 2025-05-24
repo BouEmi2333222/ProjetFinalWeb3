@@ -1,18 +1,22 @@
 import { sessionStorage } from "../dbacces/sessionStorage"
 import React from "react"
+import { useRouter } from "next/navigation"
 
 
 
 export default function Header() {
+    const router = useRouter()
     const [information, setInformation] = React.useState([])
     React.useEffect(() => {
         async function fetchPosts() { 
             const session = await sessionStorage.get()
-            setInformation(session)
+            session.onsuccess = () => {
+                setInformation(session)
+            }
         }
         fetchPosts()
     }, [])
-    console.log(information.result)
+    console.log(information && information.result)
     function loadUrlProfil(){
         if (!information.result || !information.result.id){
             return "../connexion"
@@ -23,17 +27,23 @@ export default function Header() {
     }
     
     function loadUrlPanier(){
-        if (!information.result || !information.result.id) return "../connexion"
-        else return "../panier"
+        if (!information.result || !information.result.id) return "../../connexion"
+        else return "../../panier"
     }
+    const [searchTerm, setSearchTerm] = React.useState('');
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        router.push(`../recherche/Articles/${searchTerm}`);
+    }
+    
     return (
         <header data-bs-theme="light">
             <nav className="bg-light">
                 <nav className="navbar navbar-expand-md flex justify-content-center">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="../"><img className="logo" height={100} src="logo.png"></img></a>
-                        <form className="col flex mx-5" role="search">
-                            <input className="form-control" type="search" placeholder="Rechercher" aria-label="Rechercher"></input>
+                        <form onSubmit={handleSubmit} className="col flex mx-5" role="search">
+                            <input onChange={(e) => setSearchTerm(e.target.value)} className="form-control" type="search" placeholder="Rechercher" aria-label="Rechercher"></input>
                         </form>
                         <a href={loadUrlPanier()}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-cart mx-2" viewBox="0 0 16 16">
@@ -56,9 +66,9 @@ export default function Header() {
                                     accessoires
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="../recherche/Accessoires">Deck box</a></li>
-                                    <li><a className="dropdown-item" href="../recherche/Accessoires">Tapis de jeu</a></li>
-                                    <li><a className="dropdown-item" href="../recherche/Accessoires">Sleeves</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Accessoires">Deck box</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Accessoires">Tapis de jeu</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Accessoires">Sleeves</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown mx-5 col">
@@ -66,9 +76,9 @@ export default function Header() {
                                     Magic The Gathering
                                 </a>
                                 <ul className="dropdown-menu mx-3">
-                                    <li><a className="dropdown-item" href="../recherche/Carte">Cartes</a></li>
-                                    <li><a className="dropdown-item" href="../recherche/Booster">Boosters</a></li>
-                                    <li><a className="dropdown-item" href="../recherche/Boite">Boites</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Carte">Cartes</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Booster">Boosters</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Boite">Boites</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown mx-5 col">
@@ -76,9 +86,9 @@ export default function Header() {
                                     nouveautés
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="../recherche/Article">Rien</a></li>
-                                    <li><a className="dropdown-item" href="../recherche/Article">Encore Rien</a></li>
-                                    <li><a className="dropdown-item" href="../recherche/Article">Toujours Rien</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Article">Rien</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Article">Encore Rien</a></li>
+                                    <li><a className="dropdown-item" href="../../recherche/Article">Toujours Rien</a></li>
                                 </ul>
                             </li>
                         </div>

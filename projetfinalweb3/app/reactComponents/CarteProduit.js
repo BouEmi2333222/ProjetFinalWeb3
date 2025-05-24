@@ -1,13 +1,19 @@
 import { panierStorage } from "../dbacces/panierStorage"
 import { sessionStorage } from "../dbacces/sessionStorage"
+import React from "react"
 
-const isLoggedIn = async () => {
-    const session = await sessionStorage.get()
-    if (session === null) return false
-    else return true
-}
 
 export default function CarteProduit(produit) {
+    const [isLoggedIn, setIsLoggedIn] = React.useState([])
+    React.useEffect(() => {
+        async function fetchPosts() { 
+            const session = await sessionStorage.get()
+            session.onsuccess = () => {
+                setIsLoggedIn(session.result && session.result.id ? true : false)
+            }
+        }
+        fetchPosts()
+    }, [])
     async function handleSubmit() {
         console.log(produit)
         panierStorage.addProduit(produit.produit)
@@ -20,7 +26,7 @@ export default function CarteProduit(produit) {
                     <h5 className="card-title">{produit.produit.name}</h5>
                     <p className="card-text">{produit.produit.description}</p>
                     <p className="card-text">Prix : {produit.produit.price}$</p>
-                    {isLoggedIn() && (<button onClick={handleSubmit} className="btn btn-primary">Ajouter au panier</button>)}
+                    {isLoggedIn && (<button onClick={handleSubmit} className="btn btn-primary">Ajouter au panier</button>)}
                     
                 </div>
             </div>

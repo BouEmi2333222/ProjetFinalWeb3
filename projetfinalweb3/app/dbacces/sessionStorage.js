@@ -1,8 +1,8 @@
-import { bd } from "./setupIndexeDB";
+import { loadIndexeDB } from "./setupIndexeDB";
 
 const sessionStorage = {
     async get() {
-        const db = await bd;
+        const db = await loadIndexeDB();
         const transaction = db.transaction(["sessionStorage"], "readonly")
         const sessionStore = await transaction.objectStore("sessionStorage")
         const session = await sessionStore.get(1)
@@ -10,7 +10,7 @@ const sessionStorage = {
     },
 
     async set(sessionData){
-        const db = await bd;
+        const db = await loadIndexeDB();
         console.log(db)
         const transaction = db.transaction(["sessionStorage"], "readwrite");
         const sessionStore = await transaction.objectStore("sessionStorage")
@@ -22,7 +22,7 @@ const sessionStorage = {
     },
 
     async delete(){
-        const db = await bd;
+        const db = await loadIndexeDB();
         const transaction = db.transaction(["sessionStorage"], "readwrite");
         await transaction.objectStore("sessionStorage").delete(1);
     }
