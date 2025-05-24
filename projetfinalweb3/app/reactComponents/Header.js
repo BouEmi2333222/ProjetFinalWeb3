@@ -1,5 +1,7 @@
+"use client"
 import { sessionStorage } from "../dbacces/sessionStorage"
 import React from "react"
+import "../css/header.css"
 
 
 
@@ -56,7 +58,7 @@ export default function Header() {
                                     accessoires
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="../recherche/Accessoires">Deck box</a></li>
+                                    <li><a className="dropdown-item test" href="../recherche/Accessoires">Deck box</a></li>
                                     <li><a className="dropdown-item" href="../recherche/Accessoires">Tapis de jeu</a></li>
                                     <li><a className="dropdown-item" href="../recherche/Accessoires">Sleeves</a></li>
                                 </ul>

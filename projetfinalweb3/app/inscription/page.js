@@ -67,8 +67,8 @@ export default function Inscription() {
             <div className="col-md-6">
             <form>
                 <div className="form-group">
-                <label for="username" className="col-form-label">Username:</label>
-                <input type="text" id="username" name="username" required minlength="3" className="form-control" />
+                <label htmlFor="username" className="col-form-label">Username:</label>
+                <input type="text" id="username" name="username" required minLength="3" className="form-control" />
                 <div className="invalid-feedback" id="username-error"></div>
                 </div>
 
