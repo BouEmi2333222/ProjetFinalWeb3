@@ -1,6 +1,8 @@
+"use client"
 import { sessionStorage } from "../dbacces/sessionStorage"
 import React from "react"
 import { useRouter } from "next/navigation"
+import "../css/header.css"
 
 
 
