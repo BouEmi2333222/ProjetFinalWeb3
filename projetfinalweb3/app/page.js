@@ -23,6 +23,7 @@ export default function Home() {
   return (<>
     <Header/>
     <Carousel/>
+    <h3 className="text-center">Cartes Populaires</h3>
     <ListCards produits={cartes}/>
     <Footer/>
     </>

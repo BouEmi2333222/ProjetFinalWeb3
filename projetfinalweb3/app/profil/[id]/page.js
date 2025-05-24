@@ -12,7 +12,9 @@ export default function Profil(){
     React.useEffect(() => {
         async function fetchPosts() { 
             const session = await sessionStorage.get()
-            setInformation(session)
+            session.onsuccess = () => {
+                setInformation(session.result)
+            }
         }
         fetchPosts()
     }, [])
@@ -21,7 +23,7 @@ export default function Profil(){
     <div className="container">
         <div className="row justify-content-center">
             <ul>
-                <li>Username : {information.result} </li>
+                <li>Username : {information && information.username} </li>
             </ul>
         </div>
     </div>

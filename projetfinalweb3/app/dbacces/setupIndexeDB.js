@@ -5,14 +5,14 @@ async function loadIndexeDB() {
     var requete = indexedDB.open("DBLePDC", 1);
     var bd;
     
-var PDCStorage;
+    var PDCStorage;
 
     return new Promise((resolve, reject) => {
         requete.onsuccess = function (event) {
             console.log("Database opened successfully");
             bd = event.target.result;
-            PDCStorage = bd.transaction("sessionStorage", "readwrite").objectStore("sessionStorage");
-            resolve(PDCStorage);
+            const PDCStorage = bd.transaction("sessionStorage", "readwrite").objectStore("sessionStorage");
+            resolve(bd);
         }
 
         requete.onupgradeneeded = function (event) {
@@ -23,15 +23,14 @@ var PDCStorage;
                     keyPath: "id",
                     autoIncrement: true,
                 };
-                PDCStorage = bd.createObjectStore("sessionStorage", options);
+                const PDCStorage = bd.createObjectStore("sessionStorage", options);
             
                 PDCStorage.createIndex("Index", "id");
             }
         }
     })
-    return bd
 }
 
-export const bd = loadIndexeDB()
-  
+
+export {loadIndexeDB}
 
