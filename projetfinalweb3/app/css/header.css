@@ -1,5 +1,71 @@
-.test {
-  color: red !important;
+.cs-creme-color {
+  color: #F5EEDC !important;
+}
+
+.cs-blue-color {
+  background-color: #27548A !important;
+}
+
+.cs-gold-color {
+  color: #DDA853 !important;
+}
+
+.cs-mainHeight {
+  width: 100% !important;
+  height: 7% !important;
+}
+
+.cs-logo-div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 20% !important;
+  height: 100% !important;
+}
+
+.cs-logo-a {
+  width: 75% !important;
+  height: 75% !important;
+}
+
+.cs-logo {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.cs-searchbar-div {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 60% !important;
+  height: 100% !important;
+}
+
+.cs-searchbar-icon {
+  width: 3% !important;
+  height: 100% !important;
+}
+
+.cs-searchbar-form {
+  width: 97% !important;
+  height: 100% !important;
+}
+
+.cs-icon-div {
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  width: 20% !important;
+  height: 100% !important;
+}
+
+.cs-icon-a {
+  width: 25%;
+  height: 100%;
+}
+
+.cs-icons {
+  font-size: 2.5em;
 }
 
 /*# sourceMappingURL=header.css.map */

@@ -1,6 +1,4 @@
-import Header from "../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../reactComponents/Footer";
 import React from "react"
 
 export default function Inscription() {
@@ -60,7 +58,6 @@ export default function Inscription() {
         }
       }
     return(<>
-    <Header/>
     <h1 className="text-center">Inscription</h1>
     <div className="container">
         <div className="row justify-content-center">
@@ -90,5 +87,5 @@ export default function Inscription() {
             </div>
         </div>
     </div>
-    <Footer/></>)
+    </>)
 }

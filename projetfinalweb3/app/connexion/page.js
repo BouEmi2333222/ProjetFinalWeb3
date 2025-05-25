@@ -1,7 +1,5 @@
 'use client'
-import Header from "../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../reactComponents/Footer";
 import FormEvent  from "react"
 import { useRouter } from "next/navigation"
 import { sessionStorage } from "../dbacces/sessionStorage.js"
@@ -47,7 +45,6 @@ export default function Connexion() {
     }
   }
     return(<>
-    <Header/>
     <h1 className="text-center">Connexion</h1>
     <div className="container">
         <div className="row justify-content-center">
@@ -76,5 +73,5 @@ export default function Connexion() {
             </div>
         </div>
     </div>
-    <Footer/></>)
+    </>)
 }
