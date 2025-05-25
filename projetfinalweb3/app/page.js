@@ -1,9 +1,7 @@
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "./reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "./reactComponents/Footer";
 import Card from "./reactComponents/CarteProduit";
 import Carousel from "./reactComponents/Emile/Carousel";
 import ListCards from "./reactComponents/ListesProduits";
@@ -21,11 +19,9 @@ export default function Home() {
         fetchPosts()
     }, [])
   return (<>
-    <Header/>
     <Carousel/>
     <h3 className="text-center">Cartes Populaires</h3>
     <ListCards produits={cartes}/>
-    <Footer/>
     </>
   )
 }
