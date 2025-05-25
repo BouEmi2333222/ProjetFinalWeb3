@@ -1,8 +1,6 @@
 'use client'
 
-import Header from "../../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../../reactComponents/Footer";
 import { sessionStorage } from "../../dbacces/sessionStorage.js"
 import LoadPage from "./LoadPage.js";
 import React from "react"
@@ -18,7 +16,7 @@ export default function Profil(){
         }
         fetchPosts()
     }, [])
-    return(<><Header/>
+    return(<>
     <h1 className="text-center">Profil</h1>
     <div className="container">
         <div className="row justify-content-center">
@@ -27,6 +25,6 @@ export default function Profil(){
             </ul>
         </div>
     </div>
-<Footer/></>)
+</>)
 
 }
