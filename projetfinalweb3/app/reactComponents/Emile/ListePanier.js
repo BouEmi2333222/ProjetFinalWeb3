@@ -1,14 +1,27 @@
 import CartePanier from "./CartePanier";
 import { panierStorage } from "../../dbacces/panierStorage"
+import { sessionStorage } from "../../dbacces/sessionStorage"
 import React from "react"
 import "../../css/carte.css";
 
-export default function ListePanier({produits, onRemoveProduct})
+export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoyer})
 {
+    const [information,setInformation] = React.useState([])
     const handleRemove = (produit) => {
         panierStorage.removeProduit(event, produit);
         onRemoveProduct(produit);
     };
+
+    React.useEffect(() => {
+        async function fetchSession() { 
+          const session = await sessionStorage.get()
+          session.onsuccess = () => {
+            setInformation(session.result)
+          }
+        }
+        fetchSession()
+      }, [])
+      
 
 
     return(
@@ -24,7 +37,7 @@ export default function ListePanier({produits, onRemoveProduct})
             )}
             {produits.length > 0 && <div className="d-flex flex-column cs-list-panier-div align-items-center w-100">
                 <p className="text-center cs-list-panier-text">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p>
-                <button className="w-25 cs-carte-button">Commander</button>
+                <button onClick={onCommandeEnvoyer} className="w-25 cs-carte-button">Commander</button>
             </div>}
         </>
     )

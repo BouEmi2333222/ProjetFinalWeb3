@@ -16,6 +16,7 @@ export default function Inscription() {
         const username = formData.get('username');
         const password = formData.get('password');
         const email = formData.get('email');
+        
         try {
             const response = await fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Accounts/register-client`,{
                 method: 'POST',

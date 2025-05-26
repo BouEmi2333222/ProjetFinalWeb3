@@ -8,8 +8,7 @@ const panierStorage = {
         
     },
     
-    async getAllProduit(event) {
-        event.preventDefault();
+    async getAllProduit() {
         const people = await db.collection('panier').get();
         return people;
     },
