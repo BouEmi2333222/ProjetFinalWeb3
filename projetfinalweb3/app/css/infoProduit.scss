@@ -1,0 +1,193 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$goldColor: #DDA853;
+
+.cs-info-div {
+    min-height: 75vh !important;
+    background-color: $cremeColor !important;
+}
+
+.cs-info-second-div{
+    min-height: 70vh !important;
+}
+
+.cs-info-produit {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 40% !important;
+    //min-height: 100% !important;
+    background-color: $darkBlueColor !important;
+    padding: 2% !important;
+    border-radius: 30px !important;
+}
+
+.cs-top-info-produit{
+    color: $cremeColor !important;
+    h4{
+        font-size: 40px !important;
+        margin-bottom: 4% !important;
+    }
+    p{
+        font-size: 25px !important;
+    }
+}
+
+.cs-bottom-info-produit{
+    width: 100% !important;
+    height: 30% !important;
+    //background-color: $goldColor !important;
+    border-top: 1px solid $cremeColor !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly;
+}
+
+.cs-info-image-div
+{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 40% !important;
+    //min-height: 30vh !important;
+}
+
+/*.cs-info-image {
+    width: 100% !important;
+    height: 100% !important;
+    border: 2px solid $cremeColor !important;
+    border-radius: 30px !important;
+    
+  }*/
+
+  .cs-tilt-container {
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: transform 0.2s ease;
+    border-radius: 30px;
+    overflow: hidden;
+  
+    // Add the glow layer
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      border-radius: 30px;
+      z-index: 2;
+  
+      background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.05) 30%,
+        transparent 80%
+      );
+  
+      transition: background 0.1s ease;
+    }
+  
+    .cs-info-image {
+      width: 100%;
+      height: auto;
+      border-radius: 30px;
+      display: block;
+    }
+  }
+  
+  
+
+.cs-info-inner-div {
+    width: 90% !important;
+}
+
+.cs-link-info{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 6px !important;
+    border: 1px $darkBlueColor solid !important;
+    
+    text-decoration: none !important;
+    color: $darkBlueColor !important;
+    background-color: $cremeColor !important;
+    width: 6.5% !important;
+    
+    &:hover{
+        background-color: $goldColor !important;
+        color: $cremeColor !important;
+        border: 1px $goldColor solid !important;
+    }
+    
+    &:active {
+        background-color: $darkBlueColor !important;
+        color: $cremeColor !important;
+        border: 1px $cremeColor solid !important;
+    }
+}
+
+.cs-info-text {
+    color: $cremeColor !important;
+    font-size: 25px !important;
+}
+
+.cs-info-button-div{
+    width: 40% !important;
+    button{
+        height: 100% !important;
+        background-color: $cremeColor !important;
+        border: 1px solid $darkBlueColor !important;
+        color: $darkBlueColor !important;
+        width: 20% !important;
+
+        &:hover{
+            background-color: $goldColor !important;
+            color: $cremeColor !important;
+        }
+
+        &:active{
+            background-color: $darkBlueColor !important;
+            color: $cremeColor !important;
+            border: 1px solid $cremeColor !important;
+        }
+    }
+    input{
+        height: 100% !important;
+        width: 60% !important;
+        
+        color: $darkBlueColor !important;
+        background-color: $cremeColor !important;
+        border: 1px solid $darkBlueColor !important;
+
+        text-align: center !important;
+    
+        &:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+.cs-info-inner-button {
+    border: none !important;
+    height: 20% !important;
+
+    background-color: $cremeColor !important;
+    color: $darkBlueColor !important;
+    font-weight: 600 !important;
+
+    &:hover {
+        background-color: $goldColor !important;
+    }
+
+    &:active{
+        background-color: $darkBlueColor !important;
+        color: $cremeColor !important;
+        border: 1px solid $cremeColor !important;
+    }
+}

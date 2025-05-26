@@ -1,0 +1,30 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$goldColor: #DDA853;
+
+.cs-footer-div {
+    background-image: url('/background.svg') !important;
+    background-position: center !important;
+    background-size:cover !important;
+
+    p {
+        color: $cremeColor !important;
+    }
+}
+
+.cs-list li a i{
+    color: $cremeColor !important;
+
+    &:hover {
+        color: $goldColor !important
+    }
+}
+
+.cs-grow {
+    transition: transform 0.2s ease !important;
+
+    &:hover {
+        transform: scale(1.1) !important;
+      }
+}

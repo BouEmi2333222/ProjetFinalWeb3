@@ -1,0 +1,37 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$goldColor: #DDA853;
+
+.cs-carousel-div {
+    width: 95% !important;
+    height: 100% !important;
+}
+
+.cs-carousel-inner {
+        
+    border-radius: 7px !important;
+}
+
+.cs-images {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+
+.cs-grow-carousel {
+    transition: transform 0.2s ease !important;
+
+    &:hover {
+        transform: scale(1.01) !important;
+      }
+}
+
+.cs-carousel-button {
+    font-size: 45px !important;
+    color: $cremeColor !important;
+
+    &:hover {
+        color: $goldColor !important;
+    }
+}

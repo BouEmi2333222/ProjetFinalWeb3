@@ -1,0 +1,105 @@
+{
+    "produits": [
+      {
+        "id": 1,
+        "name": "Boîte de Rangement Premium",
+        "description": "Une boîte résistante pour stocker jusqu’à 1000 cartes.",
+        "type": "Boite",
+        "price": 29.99,
+        "nbStock": 12,
+        "image": "img1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Protège-cartes Dragon Shield",
+        "description": "Protège-cartes de haute qualité, paquet de 100.",
+        "type": "Accessoires",
+        "price": 12.5,
+        "nbStock": 30,
+        "image": "img2.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Pack de 100 cartes aléatoires",
+        "description": "100 cartes Magic aléatoires, toutes éditions confondues.",
+        "type": "Carte",
+        "price": 19.99,
+        "nbStock": 50,
+        "image": "img3.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Booster - Les Friches Sauvages",
+        "description": "Un booster de 15 cartes de l’extension Les Friches Sauvages.",
+        "type": "Booster",
+        "price": 6.99,
+        "nbStock": 80,
+        "image": "img4.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Deck de Démarrage Planeswalker",
+        "description": "Un deck prêt à jouer idéal pour les débutants.",
+        "type": "Carte",
+        "price": 15.0,
+        "nbStock": 25,
+        "image": "img5.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Tapis de jeu MTG - Chandra",
+        "description": "Un tapis de jeu souple avec illustration de Chandra.",
+        "type": "Accessoires",
+        "price": 21.0,
+        "nbStock": 10,
+        "image": "img6.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Boîte Collector - Zendikar Rising",
+        "description": "Boîte collector incluant 10 boosters et cartes spéciales.",
+        "type": "Boite",
+        "price": 59.99,
+        "nbStock": 5,
+        "image": "img7.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Booster Draft - Dominaria Remastered",
+        "description": "Un booster parfait pour le draft avec des cartes classiques.",
+        "type": "Booster",
+        "price": 7.49,
+        "nbStock": 40,
+        "image": "img8.jpg"
+      },
+      {
+        "id": 9,
+        "name": "Booster PACK - GOOGLE Remastered",
+        "description": "Un  pack parfait pour le draft avec des cartes classiques.",
+        "type": "Carte",
+        "price": 8.49,
+        "nbStock": 30,
+        "image": "img9.jpg"
+      }
+    ],
+    "utilisateurs":[
+        {
+            "id": 1,
+            "name": "admin",
+            "password": "Admin123"
+        },
+        {
+            "id": 2,
+            "name": "etudiant",
+            "password": "cegep"
+        }
+    ],
+    "commandes":[
+        {
+            "userId": 1,
+            "producrId": 1,
+            "id": 1
+        }
+    ]
+  }
+  

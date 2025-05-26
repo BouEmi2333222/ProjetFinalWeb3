@@ -1,0 +1,86 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$darkBlueColorOpaque: #183b4e94;
+$goldColor: #DDA853;
+
+.cs-liste-produit{
+    margin-left: 3.5%;
+}
+
+.cs-card-div{
+    width: 30% !important;
+    margin: 1% !important;
+    height: 75% !important;
+    padding: 0.3% !important;
+
+    background-image: url('/cardbackground.svg') !important;
+    background-position: center !important;
+    background-size:cover !important;
+}
+
+.cs-link{
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+
+    &:hover{
+        background-color: $darkBlueColorOpaque !important;
+    }
+}
+
+.cs-carte-image {
+    padding: 1.2% !important;
+    width: 20% !important;
+    max-height: 13vh !important;
+    border-radius: 10px !important;
+}
+
+.cs-carte-text {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    width: 100% !important;
+    color: $cremeColor !important;
+}
+
+.cs-inner-card{
+    min-width: 0 !important;
+    width: 100% !important;
+    margin-left: 3% !important;
+}
+
+.cs-grow-carte {
+    transition: transform 0.2s ease !important;
+
+    &:hover {
+        transform: scale(1.04) !important;
+      }
+}
+
+.cs-carte-button {
+    border: 1px solid $cremeColor !important;
+    background-color: $cremeColor !important;
+    color: $darkBlueColor !important;
+    font-weight: 600 !important;
+
+    &:hover {
+        background-color: $goldColor !important;
+        border: 1px, solid $goldColor !important;
+    }
+
+    &:active{
+        background-color: $darkBlueColor !important;
+        color: $cremeColor !important;
+        border: 1px solid $cremeColor !important;
+    }
+}
+
+.cs-list-panier-div{
+    background-color: $darkBlueColor !important;
+}
+
+.cs-list-panier-text{
+    color: $cremeColor !important;
+}

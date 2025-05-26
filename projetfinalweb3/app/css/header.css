@@ -1,0 +1,159 @@
+.cs-creme-color {
+  color: #F5EEDC !important;
+}
+
+.cs-blue-color {
+  background-image: url("/background.svg") !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.cs-gold-color {
+  color: #DDA853 !important;
+}
+
+.cs-mainHeight {
+  width: 100% !important;
+  height: 7% !important;
+}
+
+.cs-logo-div {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 20% !important;
+  height: 100% !important;
+}
+
+.cs-logo-a {
+  width: 40% !important;
+  height: 40% !important;
+}
+
+.cs-logo {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 6px !important;
+  border: 1px solid #F5EEDC !important;
+  transition: transform 0.2s ease !important;
+}
+.cs-logo:hover {
+  transform: scale(1.05) !important;
+  border: 2px solid #DDA853 !important;
+}
+
+.cs-searchbar-div {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 60% !important;
+  height: 100% !important;
+}
+
+.cs-searchbar-icon {
+  width: 3% !important;
+  height: 100% !important;
+}
+
+.cs-searchbar-form {
+  width: 97% !important;
+  height: 100% !important;
+}
+
+.cs-searchbar {
+  background-color: #F5EEDC !important;
+  border: none !important;
+}
+.cs-searchbar:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.cs-icon-div {
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  width: 20% !important;
+  height: 100% !important;
+}
+
+.cs-icon-a {
+  width: 25% !important;
+  height: 100% !important;
+}
+
+.cs-icons {
+  font-size: 2.5em !important;
+  color: #F5EEDC !important;
+}
+.cs-icons:hover {
+  color: #DDA853 !important;
+}
+
+.cs-grow {
+  transition: transform 0.2s ease !important;
+}
+.cs-grow:hover {
+  transform: scale(1.1) !important;
+}
+
+.cs-options-div {
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+.cs-accessoire-list {
+  width: 20% !important;
+}
+
+.cs-a-animation {
+  font-size: 17px !important;
+  color: #F5EEDC !important;
+}
+.cs-a-animation:hover {
+  color: #DDA853 !important;
+}
+
+.cs-mtg-list {
+  width: 20% !important;
+}
+
+.cs-nouveaute-list {
+  width: 20% !important;
+}
+
+.cs-dropdown-menu {
+  margin-left: 35% !important;
+  background-color: #F5EEDC !important;
+}
+
+.cs-dropdown-item:hover {
+  background-color: #DDA853 !important;
+}
+.cs-dropdown-item:focus {
+  background-color: #183B4E !important;
+}
+
+.cs-administration {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #F5EEDC !important;
+  padding: 0.5% !important;
+  border-radius: 7px !important;
+  border: 1px, solid, #F5EEDC !important;
+  text-decoration: none !important;
+  color: #183B4E !important;
+}
+.cs-administration:hover {
+  color: #F5EEDC !important;
+  background-color: #DDA853 !important;
+  border: 1px, solid, #DDA853 !important;
+}
+.cs-administration:active {
+  color: #F5EEDC !important;
+  background-color: #183B4E !important;
+  border: 1px, solid, #F5EEDC !important;
+}
+
+/*# sourceMappingURL=header.css.map */

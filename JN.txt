@@ -1,0 +1,1 @@
+pour launch json-server a partit du document "projetfinaleweb3" : npx json-server --watch app/dbacces/db.json --port 3001
