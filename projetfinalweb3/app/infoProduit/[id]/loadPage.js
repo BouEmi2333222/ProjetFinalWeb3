@@ -5,9 +5,13 @@ import ListProduit from "@/app/reactComponents/ListesProduits";
 import "../../css/infoProduit.css"
 import Link from 'next/link';
 import TiltImage from '@/app/reactComponents/Jean-Nicolas/tiltcard';
+import { panierStorage } from "../../dbacces/panierStorage"
+import { sessionStorage } from "../../dbacces/sessionStorage"
+import { useRouter } from 'next/navigation';
 
 
 export default function LoadPage(params){
+    const router = useRouter();
     const [produit, setProduit] = React.useState([]);
     React.useEffect(() => {
         async function fetchPosts() { 
@@ -52,6 +56,24 @@ export default function LoadPage(params){
             setQuantity(value === "" ? 0 : parseInt(value));
         }
     };
+
+    const [isLoggedIn, setIsLoggedIn] = React.useState([])
+    React.useEffect(() => {
+        async function fetchPosts() { 
+            const session = await sessionStorage.get()
+            session.onsuccess = () => {
+                setIsLoggedIn(session.result && session.result.id ? true : false)
+            }
+        }
+        fetchPosts()
+    }, [])
+    async function handleSubmit() {
+
+        for (let i = 0; i < quantity; i++){
+            panierStorage.addProduit(produit)
+        }
+        router.push('/panier');
+    }
 //<img src={`/imagesProduits/img${produit.id}.jpg`} className='cs-info-image'></img>
     return(<>
         <div className="cs-info-div">
@@ -76,7 +98,7 @@ export default function LoadPage(params){
                             </div>
                             <p>Prix : {produit.price}</p>
                         </div>
-                        <button className='cs-info-inner-button w-100'>Add To Cart</button>
+                        {isLoggedIn && (<button onClick={handleSubmit} className="w-100 cs-info-inner-button">Ajouter au panier</button>)}
                     </div>
                 </div>
             </div>

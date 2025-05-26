@@ -4,6 +4,7 @@ import FormEvent  from "react"
 import { useRouter } from "next/navigation"
 import { sessionStorage } from "../dbacces/sessionStorage.js"
 import React from "react"
+import "../css/connexion.css"
 
 export default function Connexion() {
   const router = useRouter()
@@ -47,33 +48,39 @@ export default function Connexion() {
     }
   }
     return(<>
-    <h1 className="text-center">Connexion</h1>
-    <div className="container">
-        <div className="row justify-content-center">
-            <div className="col-md-6">
-            { error !== null && (
-            <div className="alert alert-danger" role="alert">
-                {error}
-            </div>
-            )}
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                <label htmlFor="username" className="col-form-label">Username:</label>
-                <input type="text" id="username" name="username" required className="form-control" />
-                <div className="invalid-feedback" id="username-error"></div>
+    <div className='cs-connexion-div'>
+      <div className="cs-inner-connexion-div">
+        <h1 className="text-center">Connexion</h1>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                { error !== null && (
+                <div className="alert alert-danger" role="alert">
+                    {error}
                 </div>
+                )}
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                    <label htmlFor="username" className="col-form-label">Username:</label>
+                    <input type="text" id="username" name="username" required className="form-control" />
+                    <div className="invalid-feedback" id="username-error"></div>
+                    </div>
 
-                <div className="form-group">
-                <label htmlFor="password" className="col-form-label">Password:</label>
-                <input type="password" id="password" name="password" required className="form-control" />
-                <div className="invalid-feedback" id="password-error"></div>
+                    <div className="form-group">
+                    <label htmlFor="password" className="col-form-label">Password:</label>
+                    <input type="password" id="password" name="password" required className="form-control" />
+                    <div className="invalid-feedback" id="password-error"></div>
+                    </div>
+
+                    <div className="cs-connexion-btn-login-div">
+                      <button type="submit" className="btn btn-primary">Login</button>
+                      <a href="../inscription">Pas de compte? S'inscrire ici</a>
+                    </div>
+                </form>
                 </div>
-
-                <button type="submit" className="btn btn-primary">Login</button>
-            </form>
-            <a href="../inscription">Pas de compte? S'inscrire ici</a>
             </div>
         </div>
+      </div>
     </div>
     </>)
 }

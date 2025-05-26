@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { sessionStorage } from "../../dbacces/sessionStorage.js"
 import React from "react"
+import "../../css/other.css"
 
 export default function LoadPage(information){
     

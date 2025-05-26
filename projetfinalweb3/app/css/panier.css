@@ -1,0 +1,10 @@
+.cs-panier-div {
+  min-height: 75vh !important;
+  background-color: #F5EEDC !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/*# sourceMappingURL=panier.css.map */

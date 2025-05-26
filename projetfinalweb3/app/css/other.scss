@@ -1,0 +1,15 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$darkBlueColorOpaque: #183b4e94;
+$goldColor: #DDA853;
+
+.cs-profil-div {
+    min-height: 75vh !important;
+    background-color: $cremeColor !important;
+}
+
+.cs-inner-profile-div{
+    background-color: $darkBlueColorOpaque !important;
+    width: 40% !important;
+}

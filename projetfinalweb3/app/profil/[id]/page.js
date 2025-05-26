@@ -40,21 +40,23 @@ export default function Profil(){
         sessionStorage.delete()
         router.push('../../connexion')
     }
-    return(<><Header/>
-    <h1 className="text-center">Profil</h1>
-    <div className="container">
-        <div className="row justify-content-center">
-            <ul>
-                <li>Username : {information && information.username} </li>
-                <button onClick={Deconnexion} className="btn btn-primary">Déconnexion</button>
-            </ul>
-        </div>
-        <div className="row justify-content-center">
-            <h1 className="text-center">Vos Commandes</h1>
-            <div>
-                {Array.from({ length: commandes.length }).map((_, index) => (
-                    <CarteCommande key={index} produit={commandes[index]} onRemove={handleRemove} />
-                ))}
+    return(<>
+    <div className='cs-profil-div'>
+        <h1 className="text-center pt-3">Profil</h1>
+        <div className="container d-flex flex-column justify-content-center align-items-center">
+            <div className="cs-inner-profile-div d-flex justify-content-center p-5 mb-3">
+                <ul>
+                    <li>Username : {information && information.username} </li>
+                    <button onClick={Deconnexion} className="btn btn-primary">Déconnexion</button>
+                </ul>
+            </div>
+            <div className="row justify-content-center">
+                <h1 className="text-center">Vos Commandes</h1>
+                <div>
+                    {Array.from({ length: commandes.length }).map((_, index) => (
+                        <CarteCommande key={index} produit={commandes[index]} onRemove={handleRemove} />
+                    ))}
+                </div>
             </div>
         </div>
     </div>

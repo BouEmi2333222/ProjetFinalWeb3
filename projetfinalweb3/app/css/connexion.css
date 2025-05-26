@@ -1,0 +1,50 @@
+.cs-connexion-div {
+  min-height: 75vh !important;
+  background-color: #F5EEDC !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.cs-inner-connexion-div {
+  border-radius: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 55% !important;
+  height: 50% !important;
+  background-color: #183B4E !important;
+  padding: 3% !important;
+  color: #F5EEDC !important;
+}
+
+.cs-connexion-btn-login-div {
+  margin-top: 3% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.cs-inscription-div {
+  min-height: 75vh !important;
+  background-color: #F5EEDC !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.cs-inner-inscription-div {
+  border-radius: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 55% !important;
+  height: 50% !important;
+  background-color: #183B4E !important;
+  padding: 3% !important;
+  color: #F5EEDC !important;
+}
+
+/*# sourceMappingURL=connexion.css.map */
