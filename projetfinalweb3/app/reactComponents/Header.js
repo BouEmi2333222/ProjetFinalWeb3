@@ -38,6 +38,17 @@ export default function Header() {
         event.preventDefault();
         router.push(`../../recherche/Articles/${searchTerm}`);
     }
+
+    const [isLoggedIn, setIsLoggedIn] = React.useState([])
+    React.useEffect(() => {
+        async function fetchPosts() { 
+            const session = await sessionStorage.get()
+            session.onsuccess = () => {
+                setIsLoggedIn(session.result && session.result.id ? true : false)
+            }
+        }
+        fetchPosts()
+    }, [])
     return (
         <header className="cs-mainHeight">
             <nav className="cs-blue-color">
@@ -93,7 +104,7 @@ export default function Header() {
                                     <li><a className="dropdown-item cs-dropdown-item" href="../../recherche/Article">Tout</a></li>
                                 </ul>
                             </li>
-                            <Link href={"/employe"} className="cs-administration">Administration</Link>
+                            {isLoggedIn && (<Link href={"/employe"} className="cs-administration">Administration</Link>)}
                         </div>
                     </div>
                 </div>
