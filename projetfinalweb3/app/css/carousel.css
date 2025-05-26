@@ -1,0 +1,30 @@
+.cs-carousel-div {
+  width: 95% !important;
+  height: 100% !important;
+}
+
+.cs-carousel-inner {
+  border-radius: 7px !important;
+}
+
+.cs-images {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.cs-grow-carousel {
+  transition: transform 0.2s ease !important;
+}
+.cs-grow-carousel:hover {
+  transform: scale(1.01) !important;
+}
+
+.cs-carousel-button {
+  font-size: 45px !important;
+  color: #F5EEDC !important;
+}
+.cs-carousel-button:hover {
+  color: #DDA853 !important;
+}
+
+/*# sourceMappingURL=carousel.css.map */

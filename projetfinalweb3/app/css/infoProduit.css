@@ -1,0 +1,15 @@
+.cs-info-div {
+  min-height: 75vh !important;
+  background-color: #F5EEDC !important;
+}
+
+.cs-info-image {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 40% !important;
+  height: 60% !important;
+  background-color: red !important;
+}
+
+/*# sourceMappingURL=infoProduit.css.map */

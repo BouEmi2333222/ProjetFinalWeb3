@@ -1,0 +1,24 @@
+.cs-footer-div {
+  background-image: url("/background.svg") !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+.cs-footer-div p {
+  color: #F5EEDC !important;
+}
+
+.cs-list li a i {
+  color: #F5EEDC !important;
+}
+.cs-list li a i:hover {
+  color: #DDA853 !important;
+}
+
+.cs-grow {
+  transition: transform 0.2s ease !important;
+}
+.cs-grow:hover {
+  transform: scale(1.1) !important;
+}
+
+/*# sourceMappingURL=footer.css.map */

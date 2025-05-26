@@ -1,0 +1,157 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$goldColor: #DDA853;
+
+.cs-creme-color{
+    color: $cremeColor !important;
+}
+
+.cs-blue-color{
+    background-image: url('/background.svg') !important;
+    background-position: center !important;
+    background-size:cover !important;
+} 
+
+.cs-gold-color{
+    color: $goldColor !important;
+}
+
+
+.cs-mainHeight{
+    width: 100% !important;
+    height: 7% !important;
+}
+
+.cs-logo-div{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    width: 20% !important;
+    height: 100% !important;
+}
+
+.cs-logo-a{
+    width: 40% !important;
+    height: 40% !important;
+}
+
+.cs-logo{
+    width: 100% !important;
+    height: 100% !important;
+
+    border-radius: 6px !important;
+    border: 1px solid $cremeColor !important;
+
+    transition: transform 0.2s ease !important;
+    &:hover{
+        transform: scale(1.05) !important;
+        border: 2px solid $goldColor !important;
+    }
+}
+
+.cs-searchbar-div{
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    
+    width: 60% !important;
+    height: 100% !important;
+}
+
+.cs-searchbar-icon {
+    width: 3% !important;
+    height: 100% !important;
+}
+
+.cs-searchbar-form {
+    width: 97% !important;
+    height: 100% !important;
+}
+
+.cs-searchbar {
+    border: none !important;
+}
+
+.cs-searchbar {
+    background-color: $cremeColor !important;
+
+    &:focus {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important; // gold glow
+    }
+}
+
+.cs-icon-div {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    
+    width: 20% !important;
+    height: 100% !important;
+}
+
+.cs-icon-a{
+    width: 25% !important;
+    height: 100% !important;
+}
+
+.cs-icons {
+    font-size: 2.5em !important;
+    color: $cremeColor !important;
+  
+    &:hover {
+      color: $goldColor !important;
+    }
+}
+
+.cs-grow {
+    transition: transform 0.2s ease !important;
+
+    &:hover {
+        transform: scale(1.1) !important;
+      }
+}
+
+.cs-options-div {
+    justify-content: center !important;
+
+    width: 100% !important;
+}
+
+.cs-accessoire-list {
+    width: 20% !important;
+}
+
+.cs-a-animation {
+    font-size: 17px !important;
+    color: $cremeColor !important;
+
+    &:hover {
+        color: $goldColor!important;
+    }  
+}
+
+.cs-mtg-list {
+    width: 20% !important;
+}
+
+.cs-nouveaute-list {
+    width: 20% !important;
+}
+
+.cs-dropdown-menu {
+    margin-left: 35% !important;
+    background-color: $cremeColor !important;
+}
+
+.cs-dropdown-item {
+    &:hover {
+        background-color: $goldColor !important;
+    }
+    &:focus {
+        background-color: $darkBlueColor !important;
+    }
+}

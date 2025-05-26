@@ -9,7 +9,9 @@ const nextConfig = {
             destination: 'https://projet-prog4e04.cegepjonquiere.ca:443/:path*',
           },
         ]
-    },
+    },    images: {
+      unoptimized: true
+  }
 }
 
 export default nextConfig

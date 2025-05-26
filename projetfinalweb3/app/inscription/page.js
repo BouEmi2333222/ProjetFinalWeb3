@@ -1,7 +1,7 @@
+
 'use client'
 import Header from "../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../reactComponents/Footer";
 import React from "react"
 import { useRouter } from "next/navigation"
 import { sessionStorage } from "../dbacces/sessionStorage.js"
@@ -67,7 +67,6 @@ export default function Inscription() {
         }
       }
     return(<>
-    <Header/>
     <h1 className="text-center">Inscription</h1>
     <div className="container">
         <div className="row justify-content-center">
@@ -97,5 +96,5 @@ export default function Inscription() {
             </div>
         </div>
     </div>
-    <Footer/></>)
+    </>)
 }

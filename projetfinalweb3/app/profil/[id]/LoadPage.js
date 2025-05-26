@@ -1,13 +1,11 @@
-import Header from "../../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../../reactComponents/Footer.js";
 import { sessionStorage } from "../../dbacces/sessionStorage.js"
 import React from "react"
 
 export default function LoadPage(information){
     
     console.log(information.information.username)
-    return(<><Header/>
+    return(<>
         <h1 className="text-center">Profil</h1>
         <div className="container">
             <div className="row justify-content-center">
@@ -17,5 +15,5 @@ export default function LoadPage(information){
                 </ul>
             </div>
         </div>
-    <Footer/></>)
+    </>)
 }

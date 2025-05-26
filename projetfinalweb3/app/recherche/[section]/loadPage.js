@@ -1,9 +1,5 @@
 'use client'
-import Image from "next/image";
-import styles from "../../page.module.css";
-import Header from "../../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../../reactComponents/Footer";
 import React from "react"
 import ListProduit from "@/app/reactComponents/ListesProduits";
 
@@ -17,8 +13,8 @@ export default function LoadPage(params){
         }
         fetchPosts()
     }, [])
-    return(<><Header/>
+    return(<>
     <ListProduit produits={produit}/>
-    <Footer/></>
+    </>
     )
 }
