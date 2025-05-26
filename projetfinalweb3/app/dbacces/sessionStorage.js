@@ -1,4 +1,5 @@
 import { loadIndexeDB } from "./setupIndexeDB";
+import Router from "next/router";
 
 const sessionStorage = {
     async get() {
@@ -17,7 +18,8 @@ const sessionStorage = {
         sessionStore.put({
             id : sessionData.id,
             username : sessionData.username,
-            token : sessionData.token
+            token : sessionData.token,
+            role : sessionData.role
         });
     },
 

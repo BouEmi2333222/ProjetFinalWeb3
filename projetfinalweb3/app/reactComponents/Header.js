@@ -16,7 +16,6 @@ export default function Header() {
         }
         fetchPosts()
     }, [])
-    console.log(information && information.result)
     function loadUrlProfil(){
         if (!information.result || !information.result.id){
             return "../connexion"
@@ -33,9 +32,8 @@ export default function Header() {
     const [searchTerm, setSearchTerm] = React.useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        router.push(`../recherche/Articles/${searchTerm}`);
+        router.push(`../../recherche/Articles/${searchTerm}`);
     }
-    
     return (
         <header data-bs-theme="light">
             <nav className="bg-light">

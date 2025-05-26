@@ -15,7 +15,6 @@ export default function CarteProduit(produit) {
         fetchPosts()
     }, [])
     async function handleSubmit() {
-        console.log(produit)
         panierStorage.addProduit(produit.produit)
     }
     return (

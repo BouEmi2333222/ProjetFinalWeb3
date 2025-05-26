@@ -12,6 +12,10 @@ const panierStorage = {
         event.preventDefault();
         const people = await db.collection('panier').get();
         return people;
+    },
+
+    async removeProduit(event,produit) {
+        await db.collection('panier').doc({ id: produit.id }).delete();
     }
 }
 
