@@ -19,7 +19,6 @@ export default function Panier(){
         }
         fetchPosts()
     }, [])
-
     React.useEffect(() => {
         async function fetchSession() { 
           const session = await sessionStorage.get()
@@ -30,11 +29,10 @@ export default function Panier(){
         }
         fetchSession()
       }, [])
-      
-
     const handleRemoveProduct = (produit) => {
         setProduits(produits.filter((p) => p !== produit));
     };
+
 
     const handleCommandeEnvoyer = () => {
         const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande`, {
@@ -55,6 +53,22 @@ export default function Panier(){
             setResult('Envoie de la commande a echoué');
           }
         })
+      };
+      
+    const handleProduireCommande =  async () => {
+        const response = await fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande`,{
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${information.result.token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Username: username,
+                    Email: email,
+                    Password: password
+                    
+                })
+            });
     }
 
     return(<>

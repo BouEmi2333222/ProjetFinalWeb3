@@ -44,8 +44,12 @@ export default function Header() {
         async function fetchPosts() { 
             const session = await sessionStorage.get()
             session.onsuccess = () => {
-                if (session.result && (session.result.role == "Admin" || session.result.role == "Employe")) setIsLoggedIn(true)
-                else setIsLoggedIn(false)
+                if (session.result && (session.result.role == "Employe" || session.result.role == "Admin")){
+                    setIsLoggedIn(true)
+                }
+                else{
+                    setIsLoggedIn(false)
+                }
             }
         }
         fetchPosts()

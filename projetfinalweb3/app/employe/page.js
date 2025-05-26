@@ -6,6 +6,7 @@ import { sessionStorage } from '../dbacces/sessionStorage'
 import CarteCommande from '../reactComponents/Emile/CarteCommande';
 import { useRouter } from "next/navigation"
 import set from 'localbase/localbase/api/actions/set';
+import "../css/carte.css";
 
 export default function Employe() {
     const router = useRouter()
@@ -325,7 +326,7 @@ export default function Employe() {
         <h1 className="text-center">Employe</h1>
         <div>
           <div className='container'>
-            <h2>
+            <h2 className='d-flex justify-content-between'>
               Liste des produits
               <button
                 className="btn btn-primary"
@@ -495,7 +496,7 @@ export default function Employe() {
             )}
           </div>
           <div className='container'>
-            <h2>
+            <h2 className='d-flex justify-content-between'>
               Liste des commandes
               <button
                 className="btn btn-primary"
