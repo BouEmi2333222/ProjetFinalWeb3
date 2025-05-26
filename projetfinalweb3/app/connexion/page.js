@@ -30,10 +30,12 @@ export default function Connexion() {
       if (response.ok) {
         const data = await response.json();
         const token = data.token;
+        const role = data.role;
         const sessionData = {
           id : 1,
           username : username,
-          token : token
+          token : token,
+          role :  role
         }
         await sessionStorage.set(sessionData)
         router.push(`../profil/${username}`)

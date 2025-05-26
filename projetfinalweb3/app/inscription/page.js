@@ -1,14 +1,20 @@
+
+'use client'
+import Header from "../reactComponents/Header.js"
 import 'bootstrap/dist/css/bootstrap.css';
 import React from "react"
+import { useRouter } from "next/navigation"
+import { sessionStorage } from "../dbacces/sessionStorage.js"
 
 export default function Inscription() {
+  const router = useRouter()
+  const [error, setError] = React.useState(null);
     async function handleSubmit(event){
         event.preventDefault();
         const formData = new FormData(event.target);
         const username = formData.get('username');
         const password = formData.get('password');
         const email = formData.get('email');
-        console.log(username, password, email)
         try {
             const response = await fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Accounts/register-client`,{
                 method: 'POST',
@@ -17,8 +23,9 @@ export default function Inscription() {
                 },
                 body: JSON.stringify({
                     Username: username,
-                    Password: password,
-                    Email: email
+                    Email: email,
+                    Password: password
+                    
                 })
             });
             if (response.ok) {
@@ -37,10 +44,12 @@ export default function Inscription() {
                     if (response.ok) {
                       const data = await response.json();
                       const token = data.token;
+                      const role = data.role;
                       const sessionData = {
                         id : 1,
                         username : username,
-                        token : token
+                        token : token,
+                        role : role
                       }
                       await sessionStorage.set(sessionData)
                       router.push(`../profil/${username}`)
@@ -62,7 +71,7 @@ export default function Inscription() {
     <div className="container">
         <div className="row justify-content-center">
             <div className="col-md-6">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                 <label htmlFor="username" className="col-form-label">Username:</label>
                 <input type="text" id="username" name="username" required minLength="3" className="form-control" />
