@@ -1,21 +1,27 @@
 import React from "react"
+import Link from 'next/link';
+import "../../css/carte.css";
 
 import { useRouter } from "next/navigation"
 
 
 export default function CartePanier({ produit, onRemove }) {
     const router = useRouter()
+    const id = produit.id;
     return (
-        <a href="#" className="text-decoration-none d-flex justify-content-center">
-            <div className="card flex flex-row" style={{ width: "20rem" }}>
-                <img src="https://th.bing.com/th/id/R.82888ecdc2a2c3efb35de51fdffe8f34?rik=4nnfXzANK8xHiA&pid=ImgRaw&r=0" className="card-img-top col" height={150} alt="..." />
-                <div className="card-body col">
-                    <h5 className="card-title">{produit.name}</h5>
-                    <p className="card-text">{produit.description}</p>
-                    <p className="card-text">Prix : {produit.price}$</p>
-                    <button onClick={() => {onRemove(produit); router.push('/panier')}} className="btn btn-primary">Supprimer</button>
+        <div className="cs-card-div cs-grow-carte">
+        <Link href={`/infoProduit/${produit.id}`} className="text-decoration-none cs-link">
+            <img src={`/imagesProduits/img${produit.id}.jpg`} className="cs-carte-image" alt="..." />
+            <div className="d-flex flex-column cs-inner-card">
+                <h5 className="cs-carte-text">{produit.name}</h5>
+                <p className="cs-carte-text">{produit.description}</p>
+                <div className="d-flex justify-content-between">
+                    <p className="cs-carte-text">Prix : {produit.price}$</p>
+                    <p className="cs-carte-text text-center">Quantitée : {produit.nbStock}</p>
                 </div>
             </div>
-        </a>
+        </Link>
+        <button onClick={() => {onRemove(produit); router.push('/panier')}} className="w-100 cs-carte-button">Supprimer</button>
+        </div>
     )
 }

@@ -1,9 +1,7 @@
 'use client'
 import React from 'react'
-import Header from '../reactComponents/Header'
 import ListeAdmin from '../reactComponents/Emile/ListeAdmin'
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from '../reactComponents/Footer'
 import { sessionStorage } from '../dbacces/sessionStorage'
 import CarteCommande from '../reactComponents/Emile/CarteCommande';
 import set from 'localbase/localbase/api/actions/set';
@@ -320,7 +318,6 @@ export default function Employe() {
       }
    
     return (<>
-      <Header />
       <div>
         <h1 className="text-center">Employe</h1>
         <div>
@@ -515,7 +512,6 @@ export default function Employe() {
             )}
           </div>
         </div>
-        <Footer />
       </div>
       </>
     );

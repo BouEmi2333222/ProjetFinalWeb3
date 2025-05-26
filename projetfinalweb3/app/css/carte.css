@@ -51,16 +51,26 @@
 }
 
 .cs-carte-button {
-  border: none !important;
+  border: 1px solid #F5EEDC !important;
   background-color: #F5EEDC !important;
   color: #183B4E !important;
   font-weight: 600 !important;
 }
 .cs-carte-button:hover {
   background-color: #DDA853 !important;
+  border: 1px, solid #DDA853 !important;
 }
 .cs-carte-button:active {
   background-color: #183B4E !important;
+  color: #F5EEDC !important;
+  border: 1px solid #F5EEDC !important;
+}
+
+.cs-list-panier-div {
+  background-color: #183B4E !important;
+}
+
+.cs-list-panier-text {
   color: #F5EEDC !important;
 }
 

@@ -1,6 +1,7 @@
 import CartePanier from "./CartePanier";
 import { panierStorage } from "../../dbacces/panierStorage"
 import React from "react"
+import "../../css/carte.css";
 
 export default function ListePanier({produits, onRemoveProduct})
 {
@@ -15,13 +16,16 @@ export default function ListePanier({produits, onRemoveProduct})
             {produits.length === 0 ? (
                 <p className="text-center">Aucun produit dans votre panier</p>
             ) : (
-                <div className="row row-cols-1 row-cols-md-3 m-4 p-4 flex justify-content-center border border-color-primary">
+                <div className="d-flex justify-content-center w-100">
                 {Array.from({ length: produits.length }).map((_, index) => (
                     <CartePanier key={index} produit={produits[index]} onRemove={handleRemove} />
                 ))}
                 </div>
             )}
-            {produits.length > 0 && <div><p className="text-center">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p></div>}
+            {produits.length > 0 && <div className="d-flex flex-column cs-list-panier-div align-items-center w-100">
+                <p className="text-center cs-list-panier-text">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p>
+                <button className="w-25 cs-carte-button">Commander</button>
+            </div>}
         </>
     )
 }

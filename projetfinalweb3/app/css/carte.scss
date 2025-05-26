@@ -60,13 +60,14 @@ $goldColor: #DDA853;
 }
 
 .cs-carte-button {
-    border: none !important;
+    border: 1px solid $cremeColor !important;
     background-color: $cremeColor !important;
     color: $darkBlueColor !important;
     font-weight: 600 !important;
 
     &:hover {
         background-color: $goldColor !important;
+        border: 1px, solid $goldColor !important;
     }
 
     &:active{
@@ -74,4 +75,12 @@ $goldColor: #DDA853;
         color: $cremeColor !important;
         border: 1px solid $cremeColor !important;
     }
+}
+
+.cs-list-panier-div{
+    background-color: $darkBlueColor !important;
+}
+
+.cs-list-panier-text{
+    color: $cremeColor !important;
 }

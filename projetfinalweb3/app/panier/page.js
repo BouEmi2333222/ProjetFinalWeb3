@@ -1,11 +1,13 @@
 'use client'
 import React from "react";
-import Header from "../reactComponents/Header";
 import 'bootstrap/dist/css/bootstrap.css';
-import Footer from "../reactComponents/Footer";
 import ListePanier from "../reactComponents/Emile/ListePanier";
 import { panierStorage } from "../dbacces/panierStorage"
+<<<<<<< HEAD
 import CheckoutButton from "../reactComponents/Jean-Nicolas/CheckoutButton";
+=======
+import "../css/panier.css";
+>>>>>>> jn7
 
 export default function Panier(){
     const [produits, setProduits] = React.useState([])
@@ -22,9 +24,9 @@ export default function Panier(){
     };
 
     return(<>
-    <Header/>
-    <h1 className="text-center">Votre Panier</h1>
-    <ListePanier produits={produits} onRemoveProduct={handleRemoveProduct}/>
-    <CheckoutButton produits={produits}/>
-    <Footer/></>)
+    <div className="cs-panier-div">
+        <h1 className="text-center pt-3 mb-0 pb-3">Votre Panier</h1>
+        <ListePanier produits={produits} onRemoveProduct={handleRemoveProduct}/>
+    </div>
+    </>)
 }

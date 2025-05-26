@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from "react"
 import { useRouter } from "next/navigation"
 import { sessionStorage } from "../dbacces/sessionStorage.js"
+import "../css/connexion.css"
 
 export default function Inscription() {
   const router = useRouter()
@@ -67,34 +68,40 @@ export default function Inscription() {
         }
       }
     return(<>
-    <h1 className="text-center">Inscription</h1>
-    <div className="container">
-        <div className="row justify-content-center">
-            <div className="col-md-6">
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                <label htmlFor="username" className="col-form-label">Username:</label>
-                <input type="text" id="username" name="username" required minLength="3" className="form-control" />
-                <div className="invalid-feedback" id="username-error"></div>
-                </div>
+    <div className="cs-connexion-div">
+      <div className="cs-inner-connexion-div">
+        <h1 className="text-center">Inscription</h1>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                    <label htmlFor="username" className="col-form-label">Username:</label>
+                    <input type="text" id="username" name="username" required minLength="3" className="form-control" />
+                    <div className="invalid-feedback" id="username-error"></div>
+                    </div>
 
-                <div className="form-group">
-                <label htmlFor="email" className="col-form-label">Email:</label>
-                <input type="email" id="email" name="email" required className="form-control" />
-                <div className="invalid-feedback" id="email-error"></div>
-                </div>
+                    <div className="form-group">
+                    <label htmlFor="email" className="col-form-label">Email:</label>
+                    <input type="email" id="email" name="email" required className="form-control" />
+                    <div className="invalid-feedback" id="email-error"></div>
+                    </div>
 
-                <div className="form-group">
-                <label htmlFor="password" className="col-form-label">Password:</label>
-                <input type="password" id="password" name="password" required className="form-control" />
-                <div className="invalid-feedback" id="password-error"></div>
-                </div>
+                    <div className="form-group">
+                    <label htmlFor="password" className="col-form-label">Password:</label>
+                    <input type="password" id="password" name="password" required className="form-control" />
+                    <div className="invalid-feedback" id="password-error"></div>
+                    </div>
 
-                <button type="submit" className="btn btn-primary">Register</button>
-            </form>
-            <a href="/connexion">Déjà un compte? Se connecter ici</a>
+                    <div className="cs-connexion-btn-login-div">
+                      <button type="submit" className="btn btn-primary">Register</button>
+                      <a href="/connexion">Déjà un compte? Se connecter ici</a>
+                    </div>
+                </form>
+                </div>
             </div>
         </div>
+      </div>
     </div>
     </>)
 }
