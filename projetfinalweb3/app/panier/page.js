@@ -3,11 +3,8 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import ListePanier from "../reactComponents/Emile/ListePanier";
 import { panierStorage } from "../dbacces/panierStorage"
-<<<<<<< HEAD
 import CheckoutButton from "../reactComponents/Jean-Nicolas/CheckoutButton";
-=======
 import "../css/panier.css";
->>>>>>> jn7
 
 export default function Panier(){
     const [produits, setProduits] = React.useState([])
