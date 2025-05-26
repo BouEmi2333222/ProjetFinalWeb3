@@ -21,6 +21,7 @@ $goldColor: #DDA853;
 
 .cs-link{
     display: flex !important;
+    align-items: center !important;
     width: 100% !important;
     height: 100% !important;
 
@@ -32,7 +33,7 @@ $goldColor: #DDA853;
 .cs-carte-image {
     padding: 1.2% !important;
     width: 20% !important;
-    height: 100% !important;
+    max-height: 13vh !important;
     border-radius: 10px !important;
 }
 
@@ -71,5 +72,6 @@ $goldColor: #DDA853;
     &:active{
         background-color: $darkBlueColor !important;
         color: $cremeColor !important;
+        border: 1px solid $cremeColor !important;
     }
 }

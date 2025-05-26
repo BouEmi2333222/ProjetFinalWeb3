@@ -61,11 +61,8 @@
 }
 
 .cs-searchbar {
-  border: none !important;
-}
-
-.cs-searchbar {
   background-color: #F5EEDC !important;
+  border: none !important;
 }
 .cs-searchbar:focus {
   border: none !important;
@@ -136,6 +133,27 @@
 }
 .cs-dropdown-item:focus {
   background-color: #183B4E !important;
+}
+
+.cs-administration {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #F5EEDC !important;
+  padding: 0.5% !important;
+  border-radius: 7px !important;
+  border: 1px, solid, #F5EEDC !important;
+  text-decoration: none !important;
+  color: #183B4E !important;
+}
+.cs-administration:hover {
+  color: #F5EEDC !important;
+  background-color: #DDA853 !important;
+  border: 1px, solid, #DDA853 !important;
+}
+.cs-administration:active {
+  color: #F5EEDC !important;
+  background-color: #183B4E !important;
+  border: 1px, solid, #F5EEDC !important;
 }
 
 /*# sourceMappingURL=header.css.map */

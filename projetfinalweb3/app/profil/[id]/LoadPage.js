@@ -4,7 +4,7 @@ import React from "react"
 
 export default function LoadPage(information){
     
-    console.log(information.information.username)
+    //console.log(information.information.username)
     return(<>
         <h1 className="text-center">Profil</h1>
         <div className="container">
