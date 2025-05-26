@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "../reactComponents/Footer";
 import ListePanier from "../reactComponents/Emile/ListePanier";
 import { panierStorage } from "../dbacces/panierStorage"
+import CheckoutButton from "../reactComponents/Jean-Nicolas/CheckoutButton";
 
 export default function Panier(){
     const [produits, setProduits] = React.useState([])
@@ -24,6 +25,6 @@ export default function Panier(){
     <Header/>
     <h1 className="text-center">Votre Panier</h1>
     <ListePanier produits={produits} onRemoveProduct={handleRemoveProduct}/>
-    
+    <CheckoutButton produits={produits}/>
     <Footer/></>)
 }

@@ -1,30 +1,31 @@
-// components/CheckoutButton.js
-import { loadStripe } from '@stripe/stripe-js';
+'use client'// pages/checkout.js
+import { useRouter } from "next/navigation"
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+export default function Checkout({ cartItems }) {
+  const router = useRouter();
 
-export default function CheckoutButton() {
-  const handleClick = async () => {
-    const stripe = await stripePromise;
-
-    const res = await fetch('pages/api/create-checkout-session', {
+  const handleCheckout = async () => {
+    const response = await fetch('/api/checkout_sessions', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ cartItems }),
     });
 
-    const session = await res.json();
+    const data = await response.json();
 
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
-
-    if (result.error) {
-      console.error(result.error.message);
+    if (data.url) {
+      router.push(data.url);
+    } else {
+      console.error('Checkout failed');
     }
   };
 
   return (
-    <button role="link" onClick={handleClick}>
-      Checkout
-    </button>
+    <div>
+      {/* Display cart items */}
+      <button onClick={handleCheckout}>Checkout</button>
+    </div>
   );
 }

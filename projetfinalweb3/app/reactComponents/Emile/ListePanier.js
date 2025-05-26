@@ -21,7 +21,7 @@ export default function ListePanier({produits, onRemoveProduct})
                 ))}
                 </div>
             )}
-            {produits.length > 0 && <div><p className="text-center">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p><button className="btn btn-primary">Commander</button></div>}
+            {produits.length > 0 && <div><p className="text-center">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p></div>}
         </>
     )
 }
