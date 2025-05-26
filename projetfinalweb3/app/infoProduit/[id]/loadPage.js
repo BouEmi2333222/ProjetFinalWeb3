@@ -1,8 +1,11 @@
 'use client'
 import 'bootstrap/dist/css/bootstrap.css';
-import React from "react"
+import React, { useState } from "react"
 import ListProduit from "@/app/reactComponents/ListesProduits";
 import "../../css/infoProduit.css"
+import Link from 'next/link';
+import TiltImage from '@/app/reactComponents/Jean-Nicolas/tiltcard';
+
 
 export default function LoadPage(params){
     const [produit, setProduit] = React.useState([]);
@@ -24,18 +27,66 @@ export default function LoadPage(params){
         }
         fetchPosts()
     }, [])
+    
+    const [quantity, setQuantity] = useState(0);
 
+    const increase = () => {
+        setQuantity(prev => {
+            const val = parseInt(prev) || 0;
+            return val < produit.nbStock ? val + 1 : val;
+        });
+    };
+    
+    const decrease = () => {
+        setQuantity(prev => {
+            const val = parseInt(prev) || 0;
+            return Math.max(0, val - 1);
+        });
+    };
+    
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+    
+        if (/^\d*$/.test(value)) {
+            setQuantity(value === "" ? 0 : parseInt(value));
+        }
+    };
+//<img src={`/imagesProduits/img${produit.id}.jpg`} className='cs-info-image'></img>
     return(<>
         <div className="cs-info-div">
-            <div>
-                <div className="cs-info-image">
-                    <img src={`/${produit}`}></img>
+            <div className='d-flex justify-content-around pt-4 pb-4 cs-info-second-div'>
+                <div className="cs-info-image-div">
+                    <TiltImage src={`/imagesProduits/img${produit.id}.jpg`} />
                 </div>
-                <div>
-
+                <div className="cs-info-produit">
+                    <div className='cs-top-info-produit'>
+                        <h4>{produit.name}</h4>
+                        <p>{produit.description}</p>
+                    </div>
+                    <div className='cs-bottom-info-produit'>
+                        <div className='d-flex justify-content-end cs-info-text'>
+                            <p>Quantitée En Stock : {produit.nbStock}</p>
+                        </div>
+                        <div className='d-flex justify-content-between cs-info-text w-100'>
+                            <div className='d-flex cs-info-button-div'>
+                                <button onClick={decrease}><i className="bi bi-dash"></i></button>
+                                <input type="text" value={quantity} onChange={handleChange} placeholder="Quantité"/>
+                                <button onClick={increase}><i className="bi bi-plus"></i></button>
+                            </div>
+                            <p>Prix : {produit.price}</p>
+                        </div>
+                        <button className='cs-info-inner-button w-100'>Add To Cart</button>
+                    </div>
                 </div>
             </div>
-            <ListProduit produits={listProduit}/>
+            <div className='d-flex flex-column align-items-center pb-3'>
+                <div className='d-flex justify-content-between cs-info-inner-div'>
+                    <h3 className="">Cartes Populaires</h3>
+                    <Link href={"/recherche/Carte"} className='cs-link-info'>Voir Plus</Link>
+                </div>
+                <ListProduit produits={listProduit}/>
+            </div>
         </div>
     </>
     )

@@ -71,16 +71,13 @@ $goldColor: #DDA853;
 }
 
 .cs-searchbar {
-    border: none !important;
-}
-
-.cs-searchbar {
     background-color: $cremeColor !important;
+    border: none !important;
 
     &:focus {
         border: none !important;
         outline: none !important;
-        box-shadow: none !important; // gold glow
+        box-shadow: none !important;
     }
 }
 
@@ -153,5 +150,30 @@ $goldColor: #DDA853;
     }
     &:focus {
         background-color: $darkBlueColor !important;
+    }
+}
+
+.cs-administration{
+    display: flex !important;
+    align-items: center !important;
+    background-color: $cremeColor !important;
+    padding: 0.5% !important;
+
+    border-radius: 7px !important;
+    border: 1px, solid, $cremeColor !important;
+
+    text-decoration: none !important;
+    color: $darkBlueColor !important;
+    
+    &:hover {
+        color: $cremeColor !important;
+        background-color: $goldColor !important;
+        border: 1px, solid, $goldColor !important;
+    }
+
+    &:active{
+        color: $cremeColor !important;
+        background-color: $darkBlueColor !important;
+        border: 1px, solid, $cremeColor !important;
     }
 }

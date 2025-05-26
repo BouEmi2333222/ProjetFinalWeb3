@@ -23,7 +23,7 @@ export default function CarteProduit(produit) {
         <>
             <div className="cs-card-div cs-grow-carte">
                 <Link href={`/infoProduit/${produit.produit.id}`} className="text-decoration-none cs-link">
-                    <img src="/imagesProduits/Card_Ugin.jpg" className="cs-carte-image" alt="..." />
+                    <img src={`/imagesProduits/img${produit.produit.id}.jpg`} className="cs-carte-image" alt="..." />
                     <div className="d-flex flex-column cs-inner-card">
                         <h5 className="cs-carte-text">{produit.produit.name}</h5>
                         <p className="cs-carte-text">{produit.produit.description}</p>

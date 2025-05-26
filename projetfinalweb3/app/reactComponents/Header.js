@@ -95,6 +95,7 @@ export default function Header() {
                                     <li><a className="dropdown-item cs-dropdown-item" href="../../recherche/Article">Tout</a></li>
                                 </ul>
                             </li>
+                            <Link href={"/employe"} className="cs-administration">Administration</Link>
                         </div>
                     </div>
                 </div>

@@ -3,13 +3,184 @@
   background-color: #F5EEDC !important;
 }
 
-.cs-info-image {
+.cs-info-second-div {
+  min-height: 70vh !important;
+}
+
+.cs-info-produit {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  width: 40% !important;
+  background-color: #183B4E !important;
+  padding: 2% !important;
+  border-radius: 30px !important;
+}
+
+.cs-top-info-produit {
+  color: #F5EEDC !important;
+}
+.cs-top-info-produit h4 {
+  font-size: 40px !important;
+  margin-bottom: 4% !important;
+}
+.cs-top-info-produit p {
+  font-size: 25px !important;
+}
+
+.cs-bottom-info-produit {
+  width: 100% !important;
+  height: 30% !important;
+  border-top: 1px solid #F5EEDC !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-evenly;
+}
+
+.cs-info-image-div {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   width: 40% !important;
-  height: 60% !important;
-  background-color: red !important;
+}
+
+/*.cs-info-image {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    border: 2px solid $cremeColor !important;
+    border-radius: 30px !important;
+    transition: transform 0.1s ease, border 0.2s ease !important;
+    will-change: transform;
+    transform-style: preserve-3d;
+    overflow: hidden;
+
+    .cs-info-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+        background: radial-gradient(
+          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.2) 30%,
+          transparent 70%
+        );
+
+        transition: background 0.1s ease;
+        z-index: 99;
+      }      
+  }*/
+.cs-tilt-container {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.2s ease;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.cs-tilt-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 30px;
+  z-index: 2;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05) 30%, transparent 80%);
+  transition: background 0.1s ease;
+}
+.cs-tilt-container .cs-info-image {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  display: block;
+}
+
+.cs-info-inner-div {
+  width: 90% !important;
+}
+
+.cs-link-info {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  border: 1px #183B4E solid !important;
+  text-decoration: none !important;
+  color: #183B4E !important;
+  background-color: #F5EEDC !important;
+  width: 6.5% !important;
+}
+.cs-link-info:hover {
+  background-color: #DDA853 !important;
+  color: #F5EEDC !important;
+  border: 1px #DDA853 solid !important;
+}
+.cs-link-info:active {
+  background-color: #183B4E !important;
+  color: #F5EEDC !important;
+  border: 1px #F5EEDC solid !important;
+}
+
+.cs-info-text {
+  color: #F5EEDC !important;
+  font-size: 25px !important;
+}
+
+.cs-info-button-div {
+  width: 40% !important;
+}
+.cs-info-button-div button {
+  height: 100% !important;
+  background-color: #F5EEDC !important;
+  border: 1px solid #183B4E !important;
+  color: #183B4E !important;
+  width: 20% !important;
+}
+.cs-info-button-div button:hover {
+  background-color: #DDA853 !important;
+  color: #F5EEDC !important;
+}
+.cs-info-button-div button:active {
+  background-color: #183B4E !important;
+  color: #F5EEDC !important;
+  border: 1px solid #F5EEDC !important;
+}
+.cs-info-button-div input {
+  height: 100% !important;
+  width: 60% !important;
+  color: #183B4E !important;
+  background-color: #F5EEDC !important;
+  border: 1px solid #183B4E !important;
+  text-align: center !important;
+}
+.cs-info-button-div input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.cs-info-inner-button {
+  border: none !important;
+  height: 20% !important;
+  background-color: #F5EEDC !important;
+  color: #183B4E !important;
+  font-weight: 600 !important;
+}
+.cs-info-inner-button:hover {
+  background-color: #DDA853 !important;
+}
+.cs-info-inner-button:active {
+  background-color: #183B4E !important;
+  color: #F5EEDC !important;
+  border: 1px solid #F5EEDC !important;
 }
 
 /*# sourceMappingURL=infoProduit.css.map */
