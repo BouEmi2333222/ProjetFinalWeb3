@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Footer from '../reactComponents/Footer'
 import { sessionStorage } from '../dbacces/sessionStorage'
 import CarteCommande from '../reactComponents/Emile/CarteCommande';
+import set from 'localbase/localbase/api/actions/set';
 
 export default function Employe() {
     const [produits, setProduits] = React.useState([])
@@ -88,6 +89,7 @@ export default function Employe() {
       setType(event.target.value);
     };
     const onSubmit = (event) => {
+      event.preventDefault();
       const formData = event.target;
       var product = {
         Name: formData.name.value,
@@ -161,6 +163,7 @@ export default function Employe() {
     };
 
     const onSubmitModifier = (event) => {
+      event.preventDefault();
       const formData = event.target;
       var product = {
         Id: parseInt(formData.id.value),
@@ -235,6 +238,7 @@ export default function Employe() {
     }
 
     const onSubmitSupprimer = (event) => {
+      event.preventDefault();
       const formData = event.target;
       const productId = parseInt(formData.id.value);
       const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Article/${productId}`, {
@@ -248,12 +252,72 @@ export default function Employe() {
       response.then(response => {
         if (response.ok) {
           console.log('Product removed successfully');
+          setProduits(produits.filter(product => product.id !== productId));
         } else {
           console.error('Failed to remove product');
         }
         
       })
     };
+
+    const handleCommandePreparer = (commandeId) => {
+      event.preventDefault();
+        const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande/preparer/${commandeId}`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${information.result.token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+      
+        response.then(response => {
+          if (response.ok) {
+            console.log('Commande prepared successfully');
+          } else {
+            console.error('Failed to prepare commande');
+          }
+        })
+      }
+  
+
+    const handleCommandeEnvoyer = (commandeId) => {
+      event.preventDefault();
+        const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande/envoyer/${commandeId}`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${information.result.token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+      
+        response.then(response => {
+          if (response.ok) {
+            console.log('Commande sent successfully');
+          } else {
+            console.error('Failed to send commande');
+          }
+        })
+      }
+  
+      const handleCommandeSupprimer = (commandeId) => {
+        event.preventDefault();
+        const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande/${commandeId}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${information.result.token}`,
+            'Content-Type': 'application/json'
+          }
+        });
+      
+        response.then(response => {
+          if (response.ok) {
+            console.log('Commande removed successfully');
+            setCommandes(commandes.filter(commande => commande.commandeId !== commandeId));
+          } else {
+            console.error('Failed to remove commande');
+          }
+        })
+      }
    
     return (<>
       <Header />
@@ -415,7 +479,7 @@ export default function Employe() {
                       </div>
                     )}
                   </div>
-                  <button className="btn btn-primary">Ajouter</button>
+                  <button className="btn btn-primary">Modifier</button>
                 </form>
               </div>
               <div>
@@ -444,7 +508,7 @@ export default function Employe() {
               <div>
                 {Array.from({ length: commandes.length }).map((_, index) => (
                   commandes[index] && (
-                    <CarteCommande key={index} commande={commandes[index]}/>
+                    <CarteCommande key={index} commande={commandes[index]} handleCommandeEnvoyer={handleCommandeEnvoyer} handleCommandePreparer={handleCommandePreparer} handleCommandeSupprimer={handleCommandeSupprimer}/>
                   )
                 ))}
               </div>

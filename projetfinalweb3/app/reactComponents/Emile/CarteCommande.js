@@ -2,7 +2,7 @@ import React from "react";
 import { sessionStorage } from "../../dbacces/sessionStorage";
 import CarteProduitCommande from "./CarteProduitCommande";
 
-export default function CarteCommande({commande}) {
+export default function CarteCommande({commande, handleCommandePreparer, handleCommandeEnvoyer, handleCommandeSupprimer}) {
     const [information, setInformation] = React.useState([])
     React.useEffect(() => {
         async function fetchPosts() { 
@@ -13,62 +13,8 @@ export default function CarteCommande({commande}) {
         }
         fetchPosts()
     }, [])
-    const handleCommandePreparer = (commandeId) => {
-        const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande/${commandeId}`, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${information.result.token}`,
-            'Content-Type': 'application/json'
-          }
-        });
-      
-        response.then(response => {
-          if (response.ok) {
-            console.log('Commande prepared successfully');
-          } else {
-            console.error('Failed to prepare commande');
-          }
-        })
-      }
+    
   
-
-    const handleCommandeEnvoyer = (commandeId) => {
-        const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande/${commandeId}`, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${information.result.token}`,
-            'Content-Type': 'application/json'
-          }
-        });
-      
-        response.then(response => {
-          if (response.ok) {
-            console.log('Commande sent successfully');
-          } else {
-            console.error('Failed to send commande');
-          }
-        })
-      }
-  
-      const handleCommandeSupprimer = (commandeId) => {
-        const response = fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande/${commandeId}`, {
-          method: 'DELETE',
-          headers: {
-            'Authorization': `Bearer ${information.result.token}`,
-            'Content-Type': 'application/json'
-          }
-        });
-      
-        response.then(response => {
-          if (response.ok) {
-            console.log('Commande removed successfully');
-          } else {
-            console.error('Failed to remove commande');
-          }
-        })
-      }
-  
-    console.log(commande)
     return (
         <div className="card">
           <div className="card-body">
