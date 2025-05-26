@@ -1,0 +1,56 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$goldColor: #DDA853;
+
+.cs-background {
+    background-color: $cremeColor !important;
+}
+
+.cs-carousel-div-app {
+    display: flex !important;
+    justify-content: center !important;
+    align-content: center !important;
+    
+    margin-top: 1.3% !important;
+    margin-bottom: 1% !important;
+
+    height: 20% !important;
+    width: 100% !important;
+}
+
+.cs-populaire-div{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.cs-populaire-inner-div {
+    width: 90% !important;
+}
+
+.cs-link-populaire{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 6px !important;
+    border: 1px $darkBlueColor solid !important;
+    
+    text-decoration: none !important;
+    color: $darkBlueColor !important;
+    background-color: $cremeColor !important;
+    width: 6.5% !important;
+    
+    &:hover{
+        background-color: $goldColor !important;
+        color: $cremeColor !important;
+        border: 1px $goldColor solid !important;
+    }
+    
+    &:active {
+        background-color: $darkBlueColor !important;
+        color: $cremeColor !important;
+        border: 1px $cremeColor solid !important;
+    }
+}

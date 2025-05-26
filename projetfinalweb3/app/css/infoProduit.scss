@@ -1,0 +1,19 @@
+$cremeColor: #F5EEDC;
+$blueColor: #27548A;
+$darkBlueColor: #183B4E;
+$goldColor: #DDA853;
+
+.cs-info-div {
+    min-height: 75vh !important;
+    background-color: $cremeColor !important;
+}
+
+.cs-info-image
+{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 40% !important;
+    height: 60% !important;
+    background-color: red !important;
+}

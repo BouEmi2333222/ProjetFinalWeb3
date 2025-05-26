@@ -1,11 +1,10 @@
 'use client'
-import Image from "next/image";
-import styles from "./page.module.css";
 import 'bootstrap/dist/css/bootstrap.css';
-import Card from "./reactComponents/CarteProduit";
 import Carousel from "./reactComponents/Emile/Carousel";
 import ListCards from "./reactComponents/ListesProduits";
-import React from "react"
+import React from "react";
+import "./css/app.css";
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -18,10 +17,25 @@ export default function Home() {
         }
         fetchPosts()
     }, [])
+
+    console.log(cartes);
   return (<>
-    <Carousel/>
-    <h3 className="text-center">Cartes Populaires</h3>
-    <ListCards produits={cartes}/>
+    <div className="cs-background d-flex flex-column align-items-center">
+      <div className="cs-carousel-div-app">  
+        <Carousel/>
+      </div>
+      <div className='cs-populaire-div'>
+        <div className="d-flex justify-content-between cs-populaire-inner-div">
+          <h3 className="">Cartes Populaires</h3>
+          <Link href={"/recherche/Carte"} className='cs-link-populaire'>Voir Plus</Link>
+        </div>
+        <ListCards produits={cartes}/>
+      </div>
+      <div className='cs-populaire-div'>
+          <h3 className="text-center">Autres Cartes</h3>
+        <ListCards produits={cartes}/>
+      </div>
+    </div>
     </>
   )
 }

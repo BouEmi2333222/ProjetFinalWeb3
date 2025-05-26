@@ -1,0 +1,66 @@
+.cs-liste-produit {
+  margin-left: 3.5%;
+}
+
+.cs-card-div {
+  width: 30% !important;
+  margin: 1% !important;
+  height: 75% !important;
+  padding: 0.3% !important;
+  background-image: url("/cardbackground.svg") !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.cs-link {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.cs-link:hover {
+  background-color: rgba(24, 59, 78, 0.5803921569) !important;
+}
+
+.cs-carte-image {
+  padding: 1.2% !important;
+  width: 20% !important;
+  height: 100% !important;
+  border-radius: 10px !important;
+}
+
+.cs-carte-text {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  width: 100% !important;
+  color: #F5EEDC !important;
+}
+
+.cs-inner-card {
+  min-width: 0 !important;
+  width: 100% !important;
+  margin-left: 3% !important;
+}
+
+.cs-grow-carte {
+  transition: transform 0.2s ease !important;
+}
+.cs-grow-carte:hover {
+  transform: scale(1.04) !important;
+}
+
+.cs-carte-button {
+  border: none !important;
+  background-color: #F5EEDC !important;
+  color: #183B4E !important;
+  font-weight: 600 !important;
+}
+.cs-carte-button:hover {
+  background-color: #DDA853 !important;
+}
+.cs-carte-button:active {
+  background-color: #183B4E !important;
+  color: #F5EEDC !important;
+}
+
+/*# sourceMappingURL=carte.css.map */
