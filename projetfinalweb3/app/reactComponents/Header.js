@@ -44,7 +44,12 @@ export default function Header() {
         async function fetchPosts() { 
             const session = await sessionStorage.get()
             session.onsuccess = () => {
-                setIsLoggedIn(session.result && session.result.id ? true : false)
+                if (session.result && (session.result.role == "Employe" || session.result.role == "Admin")){
+                    setIsLoggedIn(true)
+                }
+                else{
+                    setIsLoggedIn(false)
+                }
             }
         }
         fetchPosts()
@@ -104,7 +109,7 @@ export default function Header() {
                                     <li><a className="dropdown-item cs-dropdown-item" href="../../recherche/Article">Tout</a></li>
                                 </ul>
                             </li>
-                            {isLoggedIn && (<Link href={"/employe"} className="cs-administration">Administration</Link>)}
+                            {isLoggedIn &&  (<Link href={"/employe"} className="cs-administration">Administration</Link>)}
                         </div>
                     </div>
                 </div>

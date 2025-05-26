@@ -16,9 +16,26 @@ export default function Panier(){
         }
         fetchPosts()
     }, [])
+    
     const handleRemoveProduct = (produit) => {
         setProduits(produits.filter((p) => p !== produit));
     };
+
+    const handleProduireCommande =  async () => {
+        const response = await fetch(`https://projet-prog4e04.cegepjonquiere.ca:443/api/Commande`,{
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${information.result.token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    Username: username,
+                    Email: email,
+                    Password: password
+                    
+                })
+            });
+    }
 
     return(<>
     <div className="cs-panier-div">
