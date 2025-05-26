@@ -1,0 +1,14 @@
+.cs-recherche-div {
+  min-height: 75vh !important;
+  background-color: #F5EEDC !important;
+  padding-top: 1.5% !important;
+  padding-bottom: 1% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+.cs-recherche-div h1 {
+  color: #183B4E !important;
+}
+
+/*# sourceMappingURL=recherche.css.map */
