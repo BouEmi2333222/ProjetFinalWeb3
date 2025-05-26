@@ -2,6 +2,24 @@ import { loadIndexeDB } from "./setupIndexeDB";
 import Router from "next/router";
 
 const sessionStorage = {
+    async getJson() {
+        const db = await loadIndexeDB();
+    
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction(["sessionStorage"], "readonly");
+          const sessionStore = transaction.objectStore("sessionStorage");
+          const request = sessionStore.get(1);
+    
+          request.onsuccess = () => {
+            resolve(request.result);
+          };
+    
+          request.onerror = () => {
+            reject(new Error("Erreur lors de la récupération de la session"));
+          };
+        });
+      },
+
     async get() {
         const db = await loadIndexeDB();
         const transaction = db.transaction(["sessionStorage"], "readonly")

@@ -47,6 +47,46 @@ export default function Connexion() {
       setError("Erreur de connexion : " + error.message)
     }
   }
+  
+  /*//json-server
+  export default function Connexion() {
+    const router = useRouter();
+    const [error, setError] = React.useState(null);
+  
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const username = formData.get("username");
+      const password = formData.get("password");
+  
+      try {
+        const response = await fetch(`http://localhost:3001/utilisateurs`);
+        if (!response.ok) throw new Error("Erreur lors de la requête.");
+  
+        const users = await response.json();
+  
+        const user = users.find(
+          (u) => u.name === username && u.password === password
+        );
+  
+        if (user) {
+          const sessionData = {
+            id: user.id,
+            username: user.name,
+            token: "fake-jwt-token", // json-server doesn't generate real tokens
+            role: "user", // Add a role if needed, or store it in db.json
+          };
+  
+          await sessionStorage.set(sessionData)
+          router.push(`/profil/${username}`);
+        } else {
+          setError("Identifiant ou mot de passe incorrect");
+        }
+      } catch (error) {
+        setError("Erreur de connexion : " + error.message);
+      }
+    }*/
+  
     return(<>
     <div className='cs-connexion-div'>
       <div className="cs-inner-connexion-div">

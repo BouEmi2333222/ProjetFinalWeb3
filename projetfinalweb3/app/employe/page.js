@@ -316,7 +316,7 @@ export default function Employe() {
           }
         })
       }
-   
+    
     return (<>
       <div>
         <h1 className="text-center">Employe</h1>

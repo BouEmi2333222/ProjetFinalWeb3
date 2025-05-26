@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { sessionStorage } from "../../dbacces/sessionStorage.js"
 import { useRouter } from "next/navigation"
 import LoadPage from "./LoadPage.js";
-import React from "react"
+import React, {useState, useEffect} from "react"
 import CarteCommande from "@/app/reactComponents/Emile/CarteCommande.js";
 
 export default function Profil(){
@@ -35,6 +35,48 @@ export default function Profil(){
                 fetchCommandes()
         }
     }, [])
+
+    //json-server pas terminer
+    /*export default function Profil() {
+        const router = useRouter();
+        const [information, setInformation] = useState(null);
+        const [commandes, setCommandes] = useState([]);
+      
+        useEffect(() => {
+          async function fetchSessionAndData() {
+            try {
+                const session = await sessionStorage.get();
+                if (!session) {
+                  router.push("/connexion");
+                  return;
+                }
+                
+                const { username, id } = session;
+                console.log("id:", id);
+                console.log("username:", username);
+                
+      
+              // Fetch full user info (optional if session already has enough)
+              const userResponse = await fetch(`http://localhost:3001/utilisateurs?id=${id}`);
+              const userData = await userResponse.json();
+              if (userData.length === 0) {
+                console.error("Utilisateur introuvable");
+                return;
+              }
+      
+              setInformation(userData[0]);
+      
+              // Fetch commandes (assuming each has a userId)
+              const commandesResponse = await fetch(`http://localhost:3001/commandes?userId=${id}`);
+              const commandesData = await commandesResponse.json();
+              setCommandes(commandesData);
+            } catch (error) {
+              console.error("Erreur lors du chargement des données :", error);
+            }
+          }
+      
+          fetchSessionAndData();
+        }, []);*/
 
     function Deconnexion() {
         sessionStorage.delete()
