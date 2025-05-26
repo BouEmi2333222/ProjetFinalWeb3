@@ -15,7 +15,11 @@ const panierStorage = {
 
     async removeProduit(event,produit) {
         await db.collection('panier').doc({ id: produit.id }).delete();
-    }
+    },
+
+    async removeAllProduit() {
+        await db.collection('panier').delete();
+    },
 }
 
 export { panierStorage }

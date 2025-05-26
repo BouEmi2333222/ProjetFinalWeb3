@@ -73,6 +73,11 @@ export default function Inscription() {
       <div className="cs-inner-connexion-div">
         <h1 className="text-center">Inscription</h1>
         <div className="container">
+        { error !== null && (
+                <div className="alert alert-danger" role="alert">
+                    {error}
+                </div>
+                )}
             <div className="row justify-content-center">
                 <div className="col-md-6">
                 <form onSubmit={handleSubmit}>

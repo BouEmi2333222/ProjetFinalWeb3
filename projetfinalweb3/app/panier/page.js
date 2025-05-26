@@ -9,6 +9,7 @@ import "../css/panier.css";
 
 export default function Panier(){
     const [information, setInformation] = React.useState([])
+    const [result, setResult] = React.useState([])
     const [produits, setProduits] = React.useState([])
 
     React.useEffect(() => {
@@ -44,11 +45,26 @@ export default function Panier(){
           },
           body: JSON.stringify(produits)
         });
+
+        response.then(response => {
+          if (response.ok) {
+            setResult('Commande a été envoyé avec success');
+            panierStorage.removeAllProduit();
+            setProduits([]);
+          } else {
+            setResult('Envoie de la commande a echoué');
+          }
+        })
     }
 
     return(<>
     <div className="cs-panier-div">
         <h1 className="text-center pt-3 mb-0 pb-3">Votre Panier</h1>
+        { result !== null && (
+                <div className="alert alert-danger" role="alert">
+                    {result}
+                </div>
+                )}
         <ListePanier produits={produits} onRemoveProduct={handleRemoveProduct} onCommandeEnvoyer={handleCommandeEnvoyer}/>
     </div>
     </>)

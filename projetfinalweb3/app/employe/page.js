@@ -4,9 +4,11 @@ import ListeAdmin from '../reactComponents/Emile/ListeAdmin'
 import 'bootstrap/dist/css/bootstrap.css';
 import { sessionStorage } from '../dbacces/sessionStorage'
 import CarteCommande from '../reactComponents/Emile/CarteCommande';
+import { useRouter } from "next/navigation"
 import set from 'localbase/localbase/api/actions/set';
 
 export default function Employe() {
+    const router = useRouter()
     const [produits, setProduits] = React.useState([])
     const [commandes, setCommandes] = React.useState([])
     const [information, setInformation] = React.useState([])
@@ -52,6 +54,7 @@ export default function Employe() {
         async function fetchSession() { 
           const session = await sessionStorage.get()
           session.onsuccess = () => {
+            if (session.result && !["Admin", "Employe"].includes(session.result.role)) router.push("/")
             setInformation(session)
           }
         }
