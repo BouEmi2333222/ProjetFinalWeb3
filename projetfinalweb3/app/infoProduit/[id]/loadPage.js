@@ -74,7 +74,7 @@ export default function LoadPage(params){
         }
         router.push('/panier');
     }
-//<img src={`/imagesProduits/img${produit.id}.jpg`} className='cs-info-image'></img>
+
     return(<>
         <div className="cs-info-div">
             <div className='d-flex justify-content-around pt-4 pb-4 cs-info-second-div'>

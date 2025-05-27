@@ -24,7 +24,7 @@ export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoye
       }, [])
       
 
-
+//<button onClick={onCommandeEnvoyer} className="w-25 cs-carte-button">Commander</button>
 
     return(
         <>
@@ -39,7 +39,6 @@ export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoye
             )}
             {produits.length > 0 && <div className="d-flex flex-column cs-list-panier-div align-items-center w-100">
                 <p className="text-center cs-list-panier-text">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p>
-                <button onClick={onCommandeEnvoyer} className="w-25 cs-carte-button">Commander</button>
             </div>}
         </>
     )

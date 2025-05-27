@@ -1,5 +1,7 @@
 'use client'// pages/checkout.js
 import { useRouter } from "next/navigation"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../css/carte.css"
 
 export default function Checkout({cartItems}) {
   const router = useRouter();
@@ -22,8 +24,8 @@ export default function Checkout({cartItems}) {
     }
   };
   return (
-    <div>
-      <button onClick={handleCheckout}>Checkout</button>
+    <div className="w-100 d-flex justify-content-center cs-component-div">
+      <button onClick={handleCheckout} className="w-25 cs-carte-button">Checkout</button>
     </div>
   );
 }

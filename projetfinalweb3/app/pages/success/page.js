@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation'
-import { panierStorage } from '../../dbacces/panierStorage'
-import { sessionStorage } from '../../dbacces/sessionStorage'
 
 import { stripe } from '../api/lib/stripe'
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default async function Success({ searchParams }) {
 
@@ -24,7 +24,7 @@ export default async function Success({ searchParams }) {
 
   if (status === 'complete') {
     return (
-      <section id="success">
+      <section id="success" className='d-flex flex-column align-items-center justify-content-around'>
         <p>
           We appreciate your business! A confirmation email will be sent to{' '}
           {customerEmail}. If you have any questions, please email{' '}
