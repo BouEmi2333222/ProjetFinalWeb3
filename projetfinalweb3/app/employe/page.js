@@ -103,8 +103,8 @@ export default function Employe() {
       switch (type) {
         case 'Booster':
           const selectedSeries = series.find((serie) => serie.name === formData.seriesIdBooster.value);
-          const selectedSeriesId = selectedSeries.id;
-
+          const selectedSeriesId = selectedSeries.seriesId;
+          console.log(selectedSeriesId)
           product = {
             ...product,
             Collector: formData.isCollector.checked,
@@ -178,7 +178,7 @@ export default function Employe() {
       switch (type) {
         case 'Booster':
           const selectedSeries = series.find((serie) => serie.name === formData.seriesIdBooster.value);
-          const selectedSeriesId = selectedSeries.id;
+          const selectedSeriesId = selectedSeries.seriesid;
 
           product = {
             ...product,
