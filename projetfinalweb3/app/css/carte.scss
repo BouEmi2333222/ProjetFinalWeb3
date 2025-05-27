@@ -85,6 +85,19 @@ $goldColor: #DDA853;
     color: $cremeColor !important;
 }
 
+.cs-employe-div {
+    min-height: 75vh !important;
+    background-color: $cremeColor !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+}
+
+.cs-spacer {
+    margin-top: 5% !important;
+}
+
 .cs-component-div {
     background-color: $darkBlueColor !important;
 }

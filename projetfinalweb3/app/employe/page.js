@@ -322,8 +322,8 @@ export default function Employe() {
       }
     
     return (<>
-      <div>
-        <h1 className="text-center">Employe</h1>
+      <div className='cs-employe-div'>
+        <h1 className="text-center">Administration</h1>
         <div>
           <div className='container'>
             <h2 className='d-flex justify-content-between'>
@@ -339,7 +339,7 @@ export default function Employe() {
               <div>
                 <ListeAdmin produits={produits} onRemoveProduct={handleRemoveProduct} />
               </div>
-              <div>
+              <div className='cs-spacer'>
                 <h3>Ajouter un produit</h3>
                 <form id='ajoutForm' onSubmit={onSubmit}>
                   <div className="mb-3">
@@ -410,7 +410,7 @@ export default function Employe() {
                   <button className="btn btn-primary">Ajouter</button>
                 </form>
               </div>  
-              <div>
+              <div className='cs-spacer'>
                 <h3>Modifier un produit</h3>
                 <form onSubmit={onSubmitModifier}>
                   <div className="mb-3">
@@ -483,7 +483,7 @@ export default function Employe() {
                   <button className="btn btn-primary">Modifier</button>
                 </form>
               </div>
-              <div>
+              <div className='cs-spacer'>
                 <h3>Supprimer un produit</h3>
                 <form onSubmit={onSubmitSupprimer}>
                   <div className="mb-3">
@@ -495,7 +495,7 @@ export default function Employe() {
                 </div></>
             )}
           </div>
-          <div className='container'>
+          <div className='container cs-spacer'>
             <h2 className='d-flex justify-content-between'>
               Liste des commandes
               <button
