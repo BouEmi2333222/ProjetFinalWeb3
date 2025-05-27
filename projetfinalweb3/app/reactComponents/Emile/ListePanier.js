@@ -5,6 +5,7 @@ import React from "react"
 import "../../css/carte.css";
 
 export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoyer})
+//export default function ListePanier({produits, onRemoveProduct, onCommande})
 {
     const [information,setInformation] = React.useState([])
     const handleRemove = (produit) => {
@@ -24,12 +25,13 @@ export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoye
       
 
 
+
     return(
         <>
             {produits.length === 0 ? (
                 <p className="text-center">Aucun produit dans votre panier</p>
             ) : (
-                <div className="d-flex justify-content-center w-100">
+                <div className="d-flex flex-wrap justify-content-center w-100">
                 {Array.from({ length: produits.length }).map((_, index) => (
                     <CartePanier key={index} produit={produits[index]} onRemove={handleRemove} />
                 ))}
