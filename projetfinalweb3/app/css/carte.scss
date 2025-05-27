@@ -101,3 +101,16 @@ $goldColor: #DDA853;
 .cs-component-div {
     background-color: $darkBlueColor !important;
 }
+
+.cs-success-div {
+    background-color: $darkBlueColor !important;
+    color: $cremeColor !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 5% !important;
+    border-radius: 7px !important;
+}
