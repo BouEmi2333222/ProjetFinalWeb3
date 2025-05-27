@@ -74,4 +74,21 @@
   color: #F5EEDC !important;
 }
 
+.cs-employe-div {
+  min-height: 75vh !important;
+  background-color: #F5EEDC !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-evenly !important;
+}
+
+.cs-spacer {
+  margin-top: 5% !important;
+}
+
+.cs-component-div {
+  background-color: #183B4E !important;
+}
+
 /*# sourceMappingURL=carte.css.map */

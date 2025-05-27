@@ -5,6 +5,7 @@ import React from "react"
 import "../../css/carte.css";
 
 export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoyer})
+//export default function ListePanier({produits, onRemoveProduct, onCommande})
 {
     const [information,setInformation] = React.useState([])
     const handleRemove = (produit) => {
@@ -23,13 +24,14 @@ export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoye
       }, [])
       
 
+//<button onClick={onCommandeEnvoyer} className="w-25 cs-carte-button">Commander</button>
 
     return(
         <>
             {produits.length === 0 ? (
                 <p className="text-center">Aucun produit dans votre panier</p>
             ) : (
-                <div className="d-flex justify-content-center w-100">
+                <div className="d-flex flex-wrap justify-content-center w-100">
                 {Array.from({ length: produits.length }).map((_, index) => (
                     <CartePanier key={index} produit={produits[index]} onRemove={handleRemove} />
                 ))}
@@ -37,7 +39,6 @@ export default function ListePanier({produits, onRemoveProduct, onCommandeEnvoye
             )}
             {produits.length > 0 && <div className="d-flex flex-column cs-list-panier-div align-items-center w-100">
                 <p className="text-center cs-list-panier-text">Total : {produits.reduce((total, produit) => total + produit.price, 0)}$</p>
-                <button onClick={onCommandeEnvoyer} className="w-25 cs-carte-button">Commander</button>
             </div>}
         </>
     )

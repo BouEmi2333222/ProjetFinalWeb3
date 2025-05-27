@@ -43,7 +43,7 @@ export default function Panier(){
           },
           body: JSON.stringify(produits)
         });
-
+        console.log(JSON.stringify(produits))
         response.then(response => {
           if (response.ok) {
             setResult('Commande a été envoyé avec success');
@@ -80,6 +80,7 @@ export default function Panier(){
                 </div>
                 )}
         <ListePanier produits={produits} onRemoveProduct={handleRemoveProduct} onCommandeEnvoyer={handleCommandeEnvoyer}/>
+        <CheckoutButton cartItems={produits}/>
     </div>
     </>)
 }
