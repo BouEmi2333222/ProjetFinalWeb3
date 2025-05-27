@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 
-import { stripe } from '../lib/stripe'
+import { stripe } from '../../stripeSetup/stripe'
 const items = {
   '1': 'price_1RSu8ECLu6IA0uJm20v36YyC',
   '2': 'price_1RSu9CCLu6IA0uJmTh2gqwE7',
@@ -50,7 +50,7 @@ export async function POST(request) {
           quantity: 1,
         };
       });
-  
+  npm 
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create({
         line_items: lineItems,

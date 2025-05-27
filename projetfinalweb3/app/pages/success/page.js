@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-//import { stripe } from '../api/lib/stripe'
+import { stripe } from '../stripeSetup/stripe'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default async function Success({ searchParams }) {
