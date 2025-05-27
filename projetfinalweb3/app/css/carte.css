@@ -91,4 +91,15 @@
   background-color: #183B4E !important;
 }
 
+.cs-success-div {
+  background-color: #183B4E !important;
+  color: #F5EEDC !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5% !important;
+  border-radius: 7px !important;
+}
+
 /*# sourceMappingURL=carte.css.map */

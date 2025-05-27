@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 
 import { stripe } from '../api/lib/stripe'
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../css/carte.css"
 
 
 export default async function Success({ searchParams }) {
@@ -24,12 +25,14 @@ export default async function Success({ searchParams }) {
 
   if (status === 'complete') {
     return (
-      <section id="success" className='d-flex flex-column align-items-center justify-content-around'>
-        <p>
-          We appreciate your business! A confirmation email will be sent to{' '}
-          {customerEmail}. If you have any questions, please email{' '}
-        </p>
-        <a href="mailto:orders@example.com">orders@example.com</a>.
+      <section id="success" className='cs-employe-div'>
+        <div className="cs-success-div">
+          <p>
+            We appreciate your business! A confirmation email will be sent to{' '}
+            {customerEmail}. If you have any questions, please email{' '}
+          </p>
+          <a href="mailto:boucharde64@gmail.com">boucharde64@gmail.com</a>.
+        </div>
       </section>
     )
   }
