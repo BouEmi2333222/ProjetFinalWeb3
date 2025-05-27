@@ -14,13 +14,13 @@ export default function Checkout({cartItems}) {
     });
     console.log(response)
     if (response.ok) {
-      router.push(response.url);
+      const checkoutSession = await response.json();
+      router.push(checkoutSession.url);
     } else {
       console.error('Checkout failed');
       console.log(response)
     }
   };
-
   return (
     <div>
       <button onClick={handleCheckout}>Checkout</button>

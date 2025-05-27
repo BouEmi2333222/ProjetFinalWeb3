@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import { stripe } from '../lib/stripe'
 const items = {
   '1': 'price_1RSu8ECLu6IA0uJm20v36YyC',
   '2': 'price_1RSu9CCLu6IA0uJmTh2gqwE7',
@@ -55,11 +55,11 @@ export async function POST(request) {
       const session = await stripe.checkout.sessions.create({
         line_items: lineItems,
         mode: 'payment',
-        success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${origin}/pages/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${origin}/?canceled=true`,
       });
   
-      return NextResponse.redirect(session.url, 303)
+      return NextResponse.json(session);
     } catch (err) {
       console.error('Error creating checkout session:', err);
       return NextResponse.json(
