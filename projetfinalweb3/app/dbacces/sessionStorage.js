@@ -1,5 +1,4 @@
 import { loadIndexeDB } from "./setupIndexeDB";
-import Router from "next/router";
 
 const sessionStorage = {
     async getJson() {

@@ -1,8 +1,11 @@
 import { redirect } from 'next/navigation'
+import { panierStorage } from '../../dbacces/panierStorage'
+import { sessionStorage } from '../../dbacces/sessionStorage'
 
 import { stripe } from '../api/lib/stripe'
 
 export default async function Success({ searchParams }) {
+
   const { session_id } = await searchParams
 
   if (!session_id)

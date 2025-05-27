@@ -18,6 +18,7 @@ const panierStorage = {
     },
 
     async removeAllProduit() {
+        console.log('removeAllProduit')
         await db.collection('panier').delete();
     },
 }
